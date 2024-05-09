@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+*{
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  color: #fff;
+  background-color: #cda4f81b;
+}
+
+
+:root {
+
+  line-height: 1.5;
+  font-weight: 400;
+
+}
+
+/* Hero Section */
+
+.hero-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8b0b0ce;
+}
+
+.hero-content {
+  display: flex; /* Set display to flex to arrange content horizontally */
+  align-items: center; /* Align items vertically */
+  justify-content: space-between; /* Distribute space between text and icons */
+  padding: 5px; /* Add padding for spacing */
+  color: #ffffff;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.75; /* Adjust opacity as needed */
+}
+
+/* Furry Friends Gallery */
+
+.container {
+  max-width: 1800px;
+  margin: 20px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+.card {
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.card img {
+  width: 200px;
+  height: auto;
+  display: flex;
+  object-fit: cover;
+}
+.card-content {
+  border-bottom: 1px solid #eee;
+}
+.card-content {
+  padding: 20px;
+  flex: 1;
+}
+.card-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #666;
+}
+.card-description {
+  font-size: 1rem;
+  color: #666;
+}
