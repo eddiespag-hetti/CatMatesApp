@@ -5,10 +5,10 @@ import App from './App.jsx';
 
 import './index.css'
 
-
 import Error from './pages/Error.jsx';
+//import Error from './pages/Error.jsx';
 import Home from './pages/Home.jsx';
-import About from '.components/About/About.jsx';
+import About from './components/About/About.jsx';
 import Account from './components/Account/Account.jsx';
 import SignUp from './components/SignUp/SignUp.jsx';
 import Login from './components/Login/Login.jsx';

@@ -1,4 +1,4 @@
-import "./index.css";
+import "../index.css";
 
 // Gallery of Cat's registered to be sat
 const FurryFriends = () => {
