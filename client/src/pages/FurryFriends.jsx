@@ -78,6 +78,7 @@ const Card = ({ imgSrc, title, description }) => {
       <div className="card-content">
         <h2 className="card-title">{title}</h2>
         <p className="card-description">{description}</p>
+        <button className="card-button">Sit Me</button>
       </div>
     </div>
   );
