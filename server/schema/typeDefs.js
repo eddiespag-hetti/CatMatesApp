@@ -1,4 +1,4 @@
-
+const typeDefs = `
 
 type User {
     id: ID!
@@ -59,4 +59,6 @@ type Cat {
     createCat(ownerId: ID!, name: String!, age: Int!, breed: String!, temperament: String!): Cat!
   
   }
-  
+  `
+
+  export default typeDefs;
