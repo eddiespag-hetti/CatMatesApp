@@ -49,7 +49,7 @@ const Navbar = () => {
             
               <Link 
                 to="/SignUp"
-              className="create-acc-btn">Sign Up
+              className="create-acc-btn">Join
          </Link>
            
           </ul>

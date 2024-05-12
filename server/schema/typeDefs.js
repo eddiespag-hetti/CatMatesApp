@@ -27,9 +27,8 @@ type User {
   }
   
 
-
-
-
+ 
+  
 type Cat {
     id: ID!
     name: String!
@@ -61,4 +60,4 @@ type Cat {
   }
   `
 
-  export default typeDefs;
+  module.exports = typeDefs;

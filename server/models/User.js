@@ -29,8 +29,8 @@ const userSchema = new Schema({
 
   // Reference the Cats model
   cats: [Cats],
-// Each user can be owner or not or both
-  owner: {
+// Each user can be either an owner, a sitter or both
+  userRole: {
     type: Boolean,
     default: false,
   },
