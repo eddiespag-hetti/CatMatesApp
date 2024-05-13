@@ -11,7 +11,7 @@ import Home from './pages/Home.jsx';
 import About from './components/About/About.jsx';
 import ProfilePage from './pages/Profile.jsx';
 import SignUp from './components/SignUp/SignUp.jsx';
-import Login from './components/Login/Login.jsx';
+import LoginForm from './components/Login/Login.jsx';
 import FurryFriends from './pages/FurryFriends.jsx';
 
 
@@ -46,7 +46,7 @@ const router = createBrowserRouter([
 },
 {
   path: '/Login',
-  element: <Login />
+  element: <LoginForm />
 }
     ],
   },

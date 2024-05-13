@@ -28,12 +28,15 @@ const userSchema = new Schema({
   },
 
   // Reference the Cats model
-  cats: [Cats],
+  cats: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Cat'
+  }],
 // Each user can be either an owner, a sitter or both
-  userRole: {
-    type: Boolean,
+  userRole: [{
+    type: String,
     default: false,
-  },
+  }],
 });
 
 // Set up pre-save middleware to create password
