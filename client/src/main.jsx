@@ -10,7 +10,7 @@ import Error from './pages/Error.jsx';
 import Home from './pages/Home.jsx';
 import About from './components/About/About.jsx';
 import ProfilePage from './pages/Profile.jsx';
-import SignUp from './components/SignUp/SignUp.jsx';
+import SignUpForm from './components/SignUp/SignupForm.jsx';
 import LoginForm from './components/Login/Login.jsx';
 import FurryFriends from './pages/FurryFriends.jsx';
 
@@ -42,7 +42,7 @@ const router = createBrowserRouter([
 },
 {
   path: '/Signup',
-  element: <SignUp />
+  element: <SignUpForm />
 },
 {
   path: '/Login',

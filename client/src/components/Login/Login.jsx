@@ -5,7 +5,7 @@ import { Form, Button, Alert } from 'react-bootstrap';
 
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../../utils/mutations';
-
+import './LoginForm.css';
 import Auth from '../../utils/auth';
 
 const LoginForm = () => {
@@ -57,7 +57,8 @@ const LoginForm = () => {
 
   return (
     <>
-      <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+    <div className='container'>
+      <Form className='card' noValidate validated={validated} onSubmit={handleFormSubmit}>
         <Alert
           dismissible
           onClose={() => setShowAlert(false)}
@@ -103,6 +104,7 @@ const LoginForm = () => {
           Submit
         </Button>
       </Form>
+      </div>
     </>
   );
 };
