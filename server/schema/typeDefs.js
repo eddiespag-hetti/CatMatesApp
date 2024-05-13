@@ -5,6 +5,7 @@ type User {
     firstName: String!
     lastName: String!
     email: String!
+    username: String!
     password: String!
     cats: [Cat!]!
     roles: [String!]
@@ -45,7 +46,7 @@ type Auth {
 
   
   type Mutation {
-    createUser(firsrName: String!, lastName: String! email: String!, password: String!, roles: [String!]!): Auth!
+    createUser(firsrName: String!, lastName: String! username: String! email: String!, password: String!, roles: [String!]!): Auth!
     createCat(ownerId: ID!, name: String!, age: Int!, breed: String!, temperament: String!): Cat!
   
   }
