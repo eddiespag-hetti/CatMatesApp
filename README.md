@@ -1,6 +1,6 @@
-# Cat Sitting Web Application
+# CatMates
 
-Welcome to the CatMates! This web application connects cat owners with cat sitters, providing a platform for owners to find trusted sitters to care for their feline friends while they're away. Sitters can browse job listings posted by owners and apply for sitting opportunities.
+Welcome to CatMates! This web application connects cat owners with cat sitters, providing a platform for owners to find trusted sitters to care for their feline friends while they're away. Sitters can browse job listings posted by owners and apply for sitting opportunities.
 
 ## Features
 
@@ -22,9 +22,32 @@ Welcome to the CatMates! This web application connects cat owners with cat sitte
 
 1. Clone the repository:
 
-```bash
-git clone https://github.com/eddiespag-hetti/CatMatesApp```
+git clone https://github.com/eddiespag-hetti/CatMatesApp
 
+2. Install dependacies: 
 
+npm install
 
+3. Open up an intergrated terminal and run: 
+
+npm start
+
+## Usage
+
+ - Register as an owner or sitter to create an account.
+- Log in to access the main features of the application.
+- Owners can post job listings, while sitters can browse and apply for jobs.
+- Explore the cat gallery to view details of available cats.
+- Leave reviews for cats you've interacted with to help other users.
+
+## Contributing
+Contributions are welcome! If you'd like to contribute to the project, please fork the repository and submit a pull request.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Contact
+
+For any inquiries or feedback, please contact me via the Contact section of the application. 
 

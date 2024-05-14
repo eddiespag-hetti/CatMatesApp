@@ -57,7 +57,7 @@ const LoginForm = () => {
 
   return (
     <>
-    <div className='container'>
+    <div className='login-container'>
       <Form className='card' noValidate validated={validated} onSubmit={handleFormSubmit}>
         <Alert
           dismissible

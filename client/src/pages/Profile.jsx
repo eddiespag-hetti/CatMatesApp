@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
+// import {Navigate, useParams} from 'react-router-dom';
+import Auth from '../utils/auth';
 import '../index.css'; // Import the provided CSS file
 
-const ProfilePage = ({ member }) => {
-  // State variables for job posting form
+const ProfilePage = () => {
+  
+const idToken = Auth.getProfile()
+
+
+
+
   const [jobFormData, setJobFormData] = useState({
     title: '',
     description: '',
@@ -34,21 +41,12 @@ const ProfilePage = ({ member }) => {
   return (
     <div className="profile-container">
       <div className="profile-info">
-        <h2>{member.username}'s Profile</h2>
-        <p>Email: {member.email}</p>
+        <h2>{idToken.data.username}'s Profile</h2>
+        <p>Email: {idToken.data.email}</p>
         {/* Add more member information as needed */}
       </div>
       
-      <div className="cat-cards">
-        {/* Iterate over the member's cats and render a card for each */}
-        {member.cats.map(cat => (
-          <div key={cat.id} className="cat-card">
-            <h3>{cat.name}</h3>
-            <p>Age: {cat.age}</p>
-            {/* Add more cat information as needed */}
-          </div>
-        ))}
-      </div>
+   
 
       <div className="job-form">
         <h2>Post a Job</h2>
