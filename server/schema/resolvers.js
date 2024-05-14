@@ -3,6 +3,7 @@ const { AuthenticationError } = require('apollo-server-express');
 const { User } = require('../models');
 const { signToken } = require('../utils/auth');
 
+
 const resolvers = {
   Mutation: {
     login: async ( parent, { email, password }) => {
@@ -23,7 +24,8 @@ const resolvers = {
       return { token, user };
     },
 
-    createUser: async (parent, args) => {
+    addUser: async (parent, args) => {
+      console.log("Server- user side")
         const user = await User.create(args);
         const token = signToken(user);
     

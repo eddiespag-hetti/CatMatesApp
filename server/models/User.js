@@ -2,18 +2,18 @@ const mongoose = require("mongoose");
 
 const { Schema } = mongoose;
 const bcrypt = require("bcrypt");
-const Cats = require("./Cat");
+const Cat = require("./Cat");
 
 // Schema for each User
 const userSchema = new Schema({
   firstName: {
     type: String,
-    required: true,
+    required: false,
     trim: true,
   },
   lastName: {
     type: String,
-    required: true,
+    required: false,
     trim: true,
   },
 
@@ -38,13 +38,13 @@ username: {
   // Reference the Cats model
   cats: [{
     type: Schema.Types.ObjectId,
-    ref: 'Cat'
+    ref: 'Cats'
   }],
 // Each user can be either an owner, a sitter or both
-  userRole: [{
-    type: String,
-    default: false,
-  }],
+  // userRole: [{
+  //   type: String,
+  //   default: false,
+  // }],
 });
 
 // Set up pre-save middleware to create password

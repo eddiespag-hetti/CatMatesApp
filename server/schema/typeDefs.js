@@ -1,20 +1,19 @@
 const typeDefs = `
 
 type User {
-    id: ID!
-    firstName: String!
-    lastName: String!
+    _id: ID!
+    firstName: String
+    lastName: String
     email: String!
     username: String!
     password: String!
-    cats: [Cat!]!
-    roles: [String!]
-    createdAt: String!
-    updatedAt: String!
+    cats: [Cat]
+    
+   
   }
   
   type Cat {
-      id: ID!
+      _id: ID!
       name: String!
       age: Int!
       breed: String!
@@ -26,7 +25,7 @@ type User {
     }
     
     type Review {
-      id: ID!
+      _id: ID!
       rating: Int!
       comment: String!
       reviewer: User!
@@ -47,8 +46,8 @@ type Auth {
   
   type Mutation {
     login(email: String!, password: String!): Auth
-    createUser(firsrName: String!, lastName: String! username: String! email: String!, password: String!, roles: [String!]!): Auth
-    createCat(ownerId: ID!, name: String!, age: Int!, breed: String!, temperament: String!): Cat!
+    addUser(firstName: String, lastName: String, username: String!, email: String!, password: String!, roles: [String]): Auth
+    addCat(ownerId: ID!, name: String!, age: Int!, breed: String!, temperament: String!): Cat!
   
   }
   

@@ -44,63 +44,12 @@ body {
   opacity: 0.75; /* Adjust opacity as needed */
 }
 
-/* Furry Friends Gallery */
 
-.container {
-  max-width: 1800px;
-  margin: 20px auto;
-  padding: 0 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 20px;
-}
-.card {
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  overflow: hidden;
-  display: flex;
-  transition: transform 0.3s ease;
-}
-.card:hover {
-  transform: translateY(-5px);
-}
-.card img {
-  width: 200px;
-  height: auto;
-  display: flex;
-  object-fit: cover;
-}
-.card-content {
-  border-bottom: 1px solid #eee;
-}
-.card-content {
-  padding: 20px;
-  flex: 1;
-}
-.card-title {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  color: #666;
-}
-.card-description {
-  font-size: 1rem;
-  color: #666;
-}
 
-.card-button {
-  padding: 10px 20px;
-  border-radius: 8px;
-  background-color: #a93dd3eb;
-  color: #fff;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-}
 
-.card-button:hover {
-  background-color: #333;
-}
+
+
+
 
 /* PROFILE PAGE - Cat Owner */
 
