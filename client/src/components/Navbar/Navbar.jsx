@@ -1,10 +1,12 @@
 import "./Navbar.css";
 import "../Login/Login";
 import { Link, useLocation } from "react-router-dom";
+import Auth from '../../utils/auth';
 
 const Navbar = () => {
   const currentPage = useLocation().pathname;
 
+  if(Auth.loggedIn()) 
   return (
     <>
       <nav className="nav-wrapper">
@@ -57,6 +59,7 @@ const Navbar = () => {
       </nav>
     </>
   );
-};
+}
+
 
 export default Navbar;

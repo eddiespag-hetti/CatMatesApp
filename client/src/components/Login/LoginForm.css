@@ -13,24 +13,25 @@
   justify-content: center;
   align-items: center;
   width: 300px;
-  height: 600px;
+  height: 300px;
   padding: 20px;
+  margin-top: 20px;
   background-color: #3a12bb45;
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-.card h2 {
+.login-card h2 {
   text-align: center;
   margin-bottom: 20px;
   color: #333;
 }
 
-.card .mb-3 {
+.login-card .mb-3 {
   margin-bottom: 15px;
 }
 
-.card label {
+.login-card label {
   display: block;
   margin-bottom: 5px;
   font-size: 14px;
@@ -38,9 +39,9 @@
   color: #333;
 }
 
-.card input[type="text"],
-.card input[type="email"],
-.card input[type="password"] {
+.login-card input[type="text"],
+.login-card input[type="email"],
+.login-card input[type="password"] {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -49,14 +50,14 @@
   box-sizing: border-box;
 }
 
-.card input[type="text"]:focus,
-.card input[type="email"]:focus,
-.card input[type="password"]:focus {
+.login-card input[type="text"]:focus,
+.login-card input[type="email"]:focus,
+.login-card input[type="password"]:focus {
   border-color: #262566;
   outline: none;
 }
 
-.card .btn-submit {
+.login-card .btn-submit {
   width: 100%;
   padding: 10px;
   background-color: #4f4caf;
@@ -68,12 +69,12 @@
   cursor: pointer;
 }
 
-.card .btn-submit:disabled {
+.login-card .btn-submit:disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
 
-.card .btn-submit:hover {
+.login-card .btn-submit:hover {
   background-color: #6245a0;
 }
 

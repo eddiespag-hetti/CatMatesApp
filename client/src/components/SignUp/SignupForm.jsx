@@ -66,7 +66,7 @@ const SignupForm = () => {
     <>
     <div className='signup-container'>
       {/* This is needed for the validation functionality above */}
-      <Form className='card' noValidate validated={validated} onSubmit={handleFormSubmit}>
+      <Form className='signup-card' noValidate validated={validated} onSubmit={handleFormSubmit}>
         {/* show alert if server response is bad */}
         <Alert
           dismissible
