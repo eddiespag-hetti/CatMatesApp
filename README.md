@@ -40,6 +40,16 @@ npm start
 - Explore the cat gallery to view details of available cats.
 - Leave reviews for cats you've interacted with to help other users.
 
+
+
+![Screenshot of Homepage](/client/public/img/landingpage.png)
+
+![Screenshot of Furry Friends gallery](/client/public/img/furryfriends.png)
+
+![Screenshot of Profile](/client/public/img/profile.png)
+
+
+
 ## Contributing
 Contributions are welcome! If you'd like to contribute to the project, please fork the repository and submit a pull request.
 

@@ -1,14 +1,14 @@
 [
     {
       "name": "Ovie",
-      "breed": "Persian",
+      "breed": "Black Tabbie",
       "age": 3,
       "temperament": "Calm",
       "ownerEmail": "john@example.com"
     },
     {
       "name": "Louie",
-      "breed": "Siamese",
+      "breed": "Tabbie",
       "age": 2,
       "temperament": "Playful",
       "ownerEmail": "jane@example.com"
@@ -16,7 +16,7 @@
     {
       "name": "Moira",
       "breed": "Maine Coon",
-      "age": 4,
+      "age": 1,
       "temperament": "Cuddly",
       "ownerEmail": "alice@example.com"
     },

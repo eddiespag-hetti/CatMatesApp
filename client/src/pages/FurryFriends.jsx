@@ -10,19 +10,18 @@ const FurryFriends = () => {
       <Card imgSrc="./img/lola.png" title="Lola" />
       <Card imgSrc="./img/bobby.png" title="Bobby" />
       <Card imgSrc="./img/charlie.png" title="Charlie" />
-      <Card imgSrc="./img/garfield.png" title="Garfield" />
       <Card imgSrc="./img/lily.png" title="Lily" />
       <Card imgSrc="./img/killer.png" title="Killer" />
       <Card imgSrc="./img/bronson.png" title="Bronson" />
+      <Card imgSrc="./img/garfield.png" title="Garfield" />
       <Card imgSrc="./img/mavis.png" title="Mavis" />
       <Card imgSrc="./img/winston.png" title="Winston" />
     </div>
   );
 };
 
-// Each card will show the Cat's name, description and a 'Sit Me' button
+// Each card will show the Cat's name and a 'Sit Me' button
 
-// eslint-disable-next-line react/prop-types
 const Card = ({ imgSrc, title }) => {
   return (
   
