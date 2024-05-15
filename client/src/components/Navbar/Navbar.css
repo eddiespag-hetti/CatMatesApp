@@ -135,3 +135,26 @@
     /* Add a slight press effect on click */
   }
 
+
+
+  .logout-btn {
+    background: linear-gradient(90deg, #5c23abd0 0%, #9f20e3 100%);
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+  }
+  .logout-btn:hover {
+    background-color: #6e3ad8;
+    transform: translateY(-2px);
+    /* Add a slight lift effect on hover */
+  }
+  .logout-btn:active {
+    transform: translateY(1px);
+    /* Add a slight press effect on click */
+  }
