@@ -30,6 +30,13 @@ type User {
       comment: String!
       reviewer: User!
     }
+
+    type Job {
+      _id: ID!
+      title: String!
+      description: String!
+      
+    }
     
      
 type Auth {
@@ -40,6 +47,7 @@ type Auth {
     type Query {
       user(id: ID!): User
         cat(id: ID!): Cat
+        jobs: [Job]
     }
     
 
@@ -48,6 +56,7 @@ type Auth {
     login(email: String!, password: String!): Auth
     addUser(firstName: String, lastName: String, username: String!, email: String!, password: String!, roles: [String]): Auth
     addCat(ownerId: ID!, name: String!, age: Int!, breed: String!, temperament: String!): Cat!
+    addJob(title: String!, description: String!): Job
   
   }
   

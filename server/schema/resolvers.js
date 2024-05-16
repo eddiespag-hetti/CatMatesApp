@@ -1,6 +1,6 @@
 // Import necessary modules
 const { AuthenticationError } = require("apollo-server-express");
-const { User, userSchema } = require("../models");
+const { User, Job } = require("../models");
 const { signToken } = require("../utils/auth");
 const bcrypt = require("bcrypt");
 
@@ -33,27 +33,39 @@ const resolvers = {
       return { token, user };
     },
 
-    addJob: async (parent, { title, description }, context) => {
-      if (!context.user) {
-        throw new AuthenticationError('You must be logged in to post a job');
-      }
+    // addJob: async (parent, { title, description }, context) => {
+    //   if (!context.user) {
+    //     throw new AuthenticationError('You must be logged in to post a job');
+    //   }
 
+    //   try {
+    //     // Add the job to the user's profile
+    //     const updatedUser = await User.findByIdAndUpdate(
+    //       context.user._id,
+    //       { $push: { jobs: { title, description } } },
+    //       { new: true }
+    //     );
+
+    //     return updatedUser;
+    //   } catch (error) {
+    //     console.error('Error adding job:', error);
+    //     throw new Error('Failed to add job');
+    //   }
+    // },
+
+    addJob: async (_, { title, description }) => {
       try {
-        // Add the job to the user's profile
-        const updatedUser = await User.findByIdAndUpdate(
-          context.user._id,
-          { $push: { jobs: { title, description } } },
-          { new: true }
-        );
-
-        return updatedUser;
+        const job = new Job({ title, description });
+        await job.save();
+        return job;
       } catch (error) {
-        console.error('Error adding job:', error);
         throw new Error('Failed to add job');
       }
-    }
+    },
+
+ 
   }
-};
+}
  
 
 module.exports = resolvers;

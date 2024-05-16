@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { POST_JOB } from '../utils/mutations'; // Import the GraphQL mutation
+import JobItem from '../components/Jobs/jobItem.jsx'; // Import the JobItem component
 import Auth from '../utils/auth';
 import '../index.css'; // Import the provided CSS file
 
@@ -77,9 +78,20 @@ const ProfilePage = () => {
           <button type="submit">Post Job</button>
         </form>
       </div>
-    </div>
-  );
-};
+       <div className="current-jobs">
+        <h2>Your Current Jobs</h2>
+   {/* Map over the user's jobs and render each as a JobItem */}
+   {idToken.data.jobs.map((job, index) => (
+          <JobItem key={index} job={job} />
+          ))}
+          </div>
+        
+      </div>
+
+)};
+
+
+
 
 export default ProfilePage;
 

@@ -25,7 +25,7 @@ export const ADD_USER = gql`
 `;
 
 export const POST_JOB = gql `
-mutation postJob($jobTitle: String!, $jobDescription: String!) {
+mutation addJob($jobTitle: String!, $jobDescription: String!) {
   user {
     _id
     username
