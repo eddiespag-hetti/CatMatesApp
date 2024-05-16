@@ -8,7 +8,7 @@ const Navbar = () => {
 
   if (Auth.loggedIn()) {
     return (
-      <nav className="nav-wrapper">
+      <nav className="nav-wrapper d-flex">
         <div className="nav-content">
           <h1 className="title">CatMates.com</h1>
           <h4 className="sub-title">The purrrrfect care for when you are not there</h4>

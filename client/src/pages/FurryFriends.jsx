@@ -20,8 +20,8 @@ const FurryFriends = () => {
   );
 };
 
-// Each card will show the Cat's name and a 'Sit Me' button
 
+// Each card will show the Cat's name and a 'Sit Me' button
 const Card = ({ imgSrc, title }) => {
   return (
   
@@ -31,6 +31,7 @@ const Card = ({ imgSrc, title }) => {
         <h2 className="card-title">{title}</h2>
 
         <button className="card-button">Sit Me</button>
+      
       </div>
     </div>
   

@@ -1,4 +1,6 @@
 import '../index.css';
+import About from '../components/About/About.jsx';
+
 
 const Home = () => {
     return(
@@ -7,6 +9,9 @@ const Home = () => {
        <div className='hero-content'>
         <img src="./img/catmatesdark.png"  className="hero-img"></img>
         </div>
+        </section>
+        <section className='about'>
+            <About/>
         </section>
         </>
     )

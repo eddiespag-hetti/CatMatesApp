@@ -36,6 +36,11 @@ username: {
     minlength: 5,
   },
 
+  jobs: [{
+    type: String,
+
+  }],
+
   // Reference the Cats model
   cats: [{
     type: Schema.Types.ObjectId,
@@ -56,6 +61,7 @@ userSchema.pre("save", async function (next) {
   }
 
   next();
+  
 });
 
 // Compare the incoming password with the hashed password

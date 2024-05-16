@@ -1,22 +1,19 @@
 import React, { useState } from 'react';
-// import {Navigate, useParams} from 'react-router-dom';
+import { useMutation } from '@apollo/client';
+import { POST_JOB } from '../utils/mutations'; // Import the GraphQL mutation
 import Auth from '../utils/auth';
 import '../index.css'; // Import the provided CSS file
 
 const ProfilePage = () => {
-  
-const idToken = Auth.getProfile()
-
-
-
+  const idToken = Auth.getProfile();
 
   const [jobFormData, setJobFormData] = useState({
     title: '',
     description: '',
-    // Add more fields as needed
   });
 
-  // Function to handle input changes in job posting form
+  const [postJob] = useMutation(POST_JOB); // Define the mutation function
+
   const handleJobFormChange = (event) => {
     const { name, value } = event.target;
     setJobFormData({
@@ -25,17 +22,25 @@ const idToken = Auth.getProfile()
     });
   };
 
-  // Function to handle job posting form submission
-  const handleSubmitJobForm = (event) => {
+  const handleSubmitJobForm = async (event) => {
     event.preventDefault();
-    // Implement logic to post job using jobFormData
-    console.log('Job Form Data:', jobFormData);
-    // Clear the form fields after submission
-    setJobFormData({
-      title: '',
-      description: '',
-      // Reset other fields as needed
-    });
+    try {
+      // Call the mutation with the jobFormData
+      await postJob({
+        variables: {
+          title: jobFormData.title,
+          description: jobFormData.description
+        }
+      });
+      // Clear the form fields after submission
+      setJobFormData({
+        title: '',
+        description: ''
+      });
+      console.log('Job posted successfully!');
+    } catch (error) {
+      console.error('Error posting job:', error);
+    }
   };
 
   return (
@@ -43,10 +48,7 @@ const idToken = Auth.getProfile()
       <div className="profile-info">
         <h2>{idToken.data.username}'s Profile</h2>
         <p>Email: {idToken.data.email}</p>
-        {/* Add more member information as needed */}
       </div>
-      
-   
 
       <div className="job-form">
         <h2>Post a Job</h2>
@@ -72,7 +74,6 @@ const idToken = Auth.getProfile()
               required
             />
           </div>
-          {/* Add more fields to the job posting form as needed */}
           <button type="submit">Post Job</button>
         </form>
       </div>
@@ -81,3 +82,7 @@ const idToken = Auth.getProfile()
 };
 
 export default ProfilePage;
+
+
+
+
