@@ -36,21 +36,19 @@ username: {
     minlength: 5,
   },
 
-  jobs: [{
-    type: String,
-
-  }],
+  jobs: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Job',
+    },
+  ],
 
   // Reference the Cats model
   cats: [{
     type: Schema.Types.ObjectId,
     ref: 'Cats'
   }],
-// Each user can be either an owner, a sitter or both
-  // userRole: [{
-  //   type: String,
-  //   default: false,
-  // }],
+
 });
 
 // Set up pre-save middleware to create password

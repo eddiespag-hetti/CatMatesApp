@@ -7,6 +7,7 @@ import '../index.css'; // Import the provided CSS file
 
 const ProfilePage = () => {
   const idToken = Auth.getProfile();
+  console.log(idToken);
 
   const [jobFormData, setJobFormData] = useState({
     title: '',
@@ -47,8 +48,8 @@ const ProfilePage = () => {
   return (
     <div className="profile-container">
       <div className="profile-info">
-        <h2>{idToken.data.username}'s Profile</h2>
-        <p>Email: {idToken.data.email}</p>
+        <h2>Welcome back {idToken.data.username}!</h2>
+        {/* <p>Email: {idToken.data.email}</p> */}
       </div>
 
       <div className="job-form">
@@ -79,9 +80,9 @@ const ProfilePage = () => {
         </form>
       </div>
        <div className="current-jobs">
-        <h2>Your Current Jobs</h2>
+        <h2 className="job-heading">Your Current Jobs:</h2>
    {/* Map over the user's jobs and render each as a JobItem */}
-   {idToken.data.jobs.map((job, index) => (
+   {idToken.data?.jobs?.map((job, index) => (
           <JobItem key={index} job={job} />
           ))}
           </div>

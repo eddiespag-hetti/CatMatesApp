@@ -53,9 +53,13 @@ type Auth {
 
   
   type Mutation {
+
     login(email: String!, password: String!): Auth
+    
     addUser(firstName: String, lastName: String, username: String!, email: String!, password: String!, roles: [String]): Auth
+
     addCat(ownerId: ID!, name: String!, age: Int!, breed: String!, temperament: String!): Cat!
+
     addJob(title: String!, description: String!): Job
   
   }

@@ -7,7 +7,7 @@ const bcrypt = require("bcrypt");
 const resolvers = {
   Mutation: {
     login: async (parent, { email, password }) => {
-      const user = await User.findOne({ email });
+      const user = await User.findOne({ email }).populate('jobs');
 
       if (!user) {
         throw new AuthenticationError("Incorrect email or password!");
@@ -33,35 +33,24 @@ const resolvers = {
       return { token, user };
     },
 
-    // addJob: async (parent, { title, description }, context) => {
-    //   if (!context.user) {
-    //     throw new AuthenticationError('You must be logged in to post a job');
-    //   }
+    addJob: async (parent, { title, description }, context) => {
+      if (context.user) {
+        const job = await Job.create({
+          title,
+          description
+        });
 
-    //   try {
-    //     // Add the job to the user's profile
-    //     const updatedUser = await User.findByIdAndUpdate(
-    //       context.user._id,
-    //       { $push: { jobs: { title, description } } },
-    //       { new: true }
-    //     );
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { jobs: job._id } }
+        );
 
-    //     return updatedUser;
-    //   } catch (error) {
-    //     console.error('Error adding job:', error);
-    //     throw new Error('Failed to add job');
-    //   }
-    // },
-
-    addJob: async (_, { title, description }) => {
-      try {
-        const job = new Job({ title, description });
-        await job.save();
         return job;
-      } catch (error) {
-        throw new Error('Failed to add job');
       }
+      throw AuthenticationError;
+      ('You need to be logged in!');
     },
+
 
  
   }

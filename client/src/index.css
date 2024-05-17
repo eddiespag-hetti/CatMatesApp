@@ -61,12 +61,15 @@ body {
 }
 
 .profile-info {
-  margin-bottom: 20px;
+  color: #454545;
   text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  
 }
 
 .profile-info h2 {
-  color: #333;
+  color: #353333;
 }
 
 .cat-cards {
@@ -141,4 +144,13 @@ body {
 
 .job-form button[type="submit"]:hover {
   background-color: #6245a0;
+}
+
+/* listed Jobs */
+
+.job-heading {
+  text-align: center;
+  padding-top: 24px;
+  margin-bottom: 20px;
+  color: #656565;
 }
