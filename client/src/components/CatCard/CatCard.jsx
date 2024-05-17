@@ -6,12 +6,14 @@ import '../CatCard/CatCard.css';
 const CatCard = ({ name, breed, age, temperament }) => {
   return (
     <div className="cat-card">
+      
       <h2 className="cat-name">{name}</h2>
       <p className="cat-info">Breed: {breed}</p>
       <p className="cat-info">Age: {age}</p>
       <p className="cat-info">Temperament: {temperament}</p>
       {/* Add more information as needed */}
-      <button className="sit-button">Sit Me</button>
+      <button className="sit-btn">View Jobs</button>
+      <button className="review-btn">Reviews</button>
     </div>
   );
 };

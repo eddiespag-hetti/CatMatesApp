@@ -1,6 +1,9 @@
 import React from 'react';
 import './jobItem.css';
 
+
+
+
 const JobItem = ({ job }) => {
   return (
     <div className="job-card">

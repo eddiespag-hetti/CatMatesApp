@@ -51,10 +51,30 @@ const resolvers = {
       ('You need to be logged in!');
     },
 
+//     deleteJob: async (_, { id }) => {
+//       try {
+//         // Find the job by ID and delete it
+//         await Job.findByIdAndDelete(id);
+//         return true; // Return true if deletion is successful
+//       } catch (error) {
+//         console.error('Error deleting job:', error);
+//         return false; // Return false if deletion fails
+//       }
+//     }
+//   }
+  }};
+
+
+
+
+
+
+
+
+
+
 
  
-  }
-}
- 
+
 
 module.exports = resolvers;

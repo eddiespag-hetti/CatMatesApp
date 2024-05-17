@@ -72,6 +72,18 @@ body {
   color: #353333;
 }
 
+
+/* User's Cat Card */
+
+.user-cat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+}
+
 .cat-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -96,6 +108,8 @@ body {
 
 .job-form {
   width: 100%;
+  flex: 1;
+  margin-right: 20px;
   max-width: 600px;
   margin-top: 30px;
 }
@@ -153,4 +167,14 @@ body {
   padding-top: 24px;
   margin-bottom: 20px;
   color: #656565;
+}
+
+.jobs-container {
+  display: flex;
+ 
+
+}
+
+.current-jobs {
+  flex: 1;
 }

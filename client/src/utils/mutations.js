@@ -35,3 +35,12 @@ mutation AddJob($title: String!, $description: String!) {
 
 
 `
+
+// export const REMOVE_JOB = gql`
+// deleteJob(id: ID!): Boolean {
+//   deleteJob(id: $id) {
+//     _id
+//     description
+//     title
+//     }
+// `

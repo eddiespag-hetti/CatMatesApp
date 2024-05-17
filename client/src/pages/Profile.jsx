@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { POST_JOB } from '../utils/mutations'; // Import the GraphQL mutation
 import JobItem from '../components/Jobs/jobItem.jsx'; // Import the JobItem component
+import CatCard from '../components/CatCard/CatCard.jsx';
 import Auth from '../utils/auth';
 import '../index.css'; // Import the provided CSS file
 
@@ -45,51 +46,68 @@ const ProfilePage = () => {
     }
   };
 
+// Delete a posted job 
+// const handleDeleteJob = (id) => {
+//   const updatedJobs = jobs.filter((job) => job.id !== id);
+//   setJobs(updatedJobs);
+// };
+
   return (
     <div className="profile-container">
       <div className="profile-info">
         <h2>Welcome back {idToken.data.username}!</h2>
         {/* <p>Email: {idToken.data.email}</p> */}
       </div>
-
-      <div className="job-form">
-        <h2>Post a Job</h2>
-        <form onSubmit={handleSubmitJobForm}>
-          <div>
-            <label htmlFor="title">Title:</label>
-            <input
-              type="text"
-              id="title"
-              name="title"
-              value={jobFormData.title}
-              onChange={handleJobFormChange}
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="description">Description:</label>
-            <textarea
-              id="description"
-              name="description"
-              value={jobFormData.description}
-              onChange={handleJobFormChange}
-              required
-            />
-          </div>
-          <button type="submit">Post Job</button>
-        </form>
-      </div>
-       <div className="current-jobs">
-        <h2 className="job-heading">Your Current Jobs:</h2>
-   {/* Map over the user's jobs and render each as a JobItem */}
-   {idToken.data?.jobs?.map((job, index) => (
-          <JobItem key={index} job={job} />
-          ))}
-          </div>
-        
+      <div className="user-cat">
+      <CatCard />
       </div>
 
-)};
+   <div className='jobs-container'>
+  <div className="job-form">
+    <h2>Post a Job</h2>
+    <form onSubmit={handleSubmitJobForm}>
+      <div>
+        <label htmlFor="title">Title:</label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          value={jobFormData.title}
+          onChange={handleJobFormChange}
+          required
+        />
+      </div>
+      <div>
+        <label htmlFor="description">Description:</label>
+        <textarea
+          id="description"
+          name="description"
+          value={jobFormData.description}
+          onChange={handleJobFormChange}
+          required
+        />
+      </div>
+      <button type="submit">Post Job</button>
+    </form>
+  </div>
+  <div className="current-jobs">
+    <h2 className="job-heading">Your Current Jobs:</h2>
+    {/* Map over the user's jobs and render each as a JobItem */}
+    {idToken.data?.jobs?.map((job, index) => (
+      <JobItem key={index} job={job}/>
+    ))}
+  </div>
+  </div>
+</div>
+
+);
+}
+
+
+
+
+
+
 
 
 

@@ -46,7 +46,7 @@ username: {
   // Reference the Cats model
   cats: [{
     type: Schema.Types.ObjectId,
-    ref: 'Cats'
+    ref: 'Cat'
   }],
 
 });

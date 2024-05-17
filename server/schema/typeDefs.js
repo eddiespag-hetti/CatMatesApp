@@ -61,6 +61,8 @@ type Auth {
     addCat(ownerId: ID!, name: String!, age: Int!, breed: String!, temperament: String!): Cat!
 
     addJob(title: String!, description: String!): Job
+
+   
   
   }
   
