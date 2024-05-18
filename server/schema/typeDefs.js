@@ -1,71 +1,127 @@
+// Define GraphQL type definitions
 const typeDefs = `
-
-type User {
+  type User {
     _id: ID!
     firstName: String
     lastName: String
-    email: String!
     username: String!
+    email: String!
     password: String!
+    jobs: [Job]
     cats: [Cat]
+  }
+
+  type Cat {
+    _id: ID!
+    name: String!
+    breed: String!
+    age: Int!
+    temperament: String!
+    owner: User!
+  }
+
+  type Job {
+    _id: ID!
+    title: String!
+    description: String!
+    cats: [Cat]
+  }
+
+  type Auth {
+    token: String!
+    user: User
     
-   
+  
+  }
+
+  type Query {
+    getUserById(userId: ID!): User
+    getCatsByOwnerId(ownerId: ID!): [Cat]
+    getJobById(jobId: ID!): Job
+  }
+
+  type Mutation {
+    login(email: String!, password: String!): Auth
+    addUser(firstName: String, lastName: String, username: String!, email: String!, password: String!): Auth
+    addJob(title: String!, description: String!, catIds: [ID]): Job
+    addCat(name: String!, breed: String!, age: Int!, temperament: String!, ownerId: ID!): Cat
   }
   
-  type Cat {
-      _id: ID!
-      name: String!
-      age: Int!
-      breed: String!
-      temperament: String!
-      owner: User!
+`
 
-      # reviews: [Review!]!
-    
-    }
-    
-    type Review {
-      _id: ID!
-      rating: Int!
-      comment: String!
-      reviewer: User!
-    }
 
-    type Job {
-      _id: ID!
-      title: String!
-      description: String!
+
+ module.exports = typeDefs;
+
+
+// const typeDefs = `
+
+// type User {
+//     _id: ID!
+//     firstName: String
+//     lastName: String
+//     email: String!
+//     username: String!
+//     password: String!
+   
+    
+   
+//   }
+  
+//   type Cat {
+//       _id: ID!
+//       name: String!
+//       age: Int!
+//       breed: String!
+//       temperament: String!
+//       ownerId: User!
+
+//       # reviews: [Review!]!
+    
+//     }
+    
+//     type Review {
+//       _id: ID!
+//       rating: Int!
+//       comment: String!
+//       reviewer: User!
+//     }
+
+//     type Job {
+//       _id: ID!
+//       title: String!
+//       description: String!
       
-    }
+//     }
     
      
-type Auth {
-  token: ID!
-  user: User
-}
+// type Auth {
+//   token: ID!
+//   user: User
+// }
 
-    type Query {
-      user(id: ID!): User
-        cat(id: ID!): Cat
-        jobs: [Job]
-    }
+//     type Query {
+//       user(id: ID!): User
+//         cat(id: ID!): Cat
+//         jobs: [Job]
+//     }
     
 
   
-  type Mutation {
+//   type Mutation {
 
-    login(email: String!, password: String!): Auth
+//     login(email: String!, password: String!): Auth
     
-    addUser(firstName: String, lastName: String, username: String!, email: String!, password: String!, roles: [String]): Auth
+//     addUser(firstName: String, lastName: String, username: String!, email: String!, password: String!, roles: [String]): Auth
 
-    addCat(ownerId: ID!, name: String!, age: Int!, breed: String!, temperament: String!): Cat!
+//     addCat(ownerId: ID!, name: String!, age: Int!, breed: String!, temperament: String!): Cat
 
-    addJob(title: String!, description: String!): Job
+//     addJob(title: String!, description: String!): Job
 
    
   
-  }
+//   }
   
-  `;
+//   `;
 
-module.exports = typeDefs;
+// module.exports = typeDefs;

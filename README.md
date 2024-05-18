@@ -18,6 +18,10 @@ Welcome to CatMates! This web application connects cat owners with cat sitters, 
 - **Authentication:** JSON Web Tokens (JWT)
 - **Styling:** CSS Modules
 
+## Deployed site 
+
+- (paste deployed link here)
+
 ## Installation
 
 1. Clone the repository:

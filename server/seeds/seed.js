@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const db = require('../config/connection');
 const { User, Cat, Job } = require('../models');
 const cleanDB = require('./cleanDB');
@@ -7,23 +8,33 @@ const catData = require('./catData.json');
 const jobData = require('./jobsData.json');
 
 db.once('open', async () => {
-    //await cleanDB();
     await cleanDB('User', 'users');
     await cleanDB('Cat', 'cats');
     await cleanDB('Job', 'jobs');
+    // await User.insertMany(userData);
+    // await Cat.insertMany(catData);
+    // await Job.insertMany(jobData);
+  // Create users
+  const users = await User.create(userData);
 
+  // Create jobs
+  await Job.create(jobData);
 
-    await User.create(userData);
-    await Job.create(jobData)
-    
+  // Map user emails to user IDs for quick access
+  const userEmailToIdMap = {};
+  users.forEach(user => {
+      userEmailToIdMap[user.email] = user._id;
+  });
 
-    for (let i = 0; i < catData.length; i++)
-    await Cat.create(catData);
+  // Create cats with correct owners
+  const cats = catData.map(cat => ({
+      ...cat,
+      owner: userEmailToIdMap[cat.ownerEmail], // Assign the correct owner based on email
+  }));
+  await Cat.create(cats);
 
-
-    
-
-
-console.log('all done!');
-process.exit(0);
+  console.log('Seeding completed!');
+  process.exit(0);
 });
+
+

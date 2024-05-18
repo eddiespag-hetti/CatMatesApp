@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
+import { useQuery } from '@apollo/client';
+import { GET_CAT } from '../utils/mutations.js';
 import { POST_JOB } from '../utils/mutations'; // Import the GraphQL mutation
 import JobItem from '../components/Jobs/jobItem.jsx'; // Import the JobItem component
 import CatCard from '../components/CatCard/CatCard.jsx';
@@ -46,11 +48,18 @@ const ProfilePage = () => {
     }
   };
 
-// Delete a posted job 
-// const handleDeleteJob = (id) => {
-//   const updatedJobs = jobs.filter((job) => job.id !== id);
-//   setJobs(updatedJobs);
-// };
+
+   // Use the useQuery hook to fetch the user's cat information
+   const { loading, error, data } = useQuery(GET_CAT, {
+    variables: { cat: 'catName' }, // Pass the cat's name as a variable
+  });
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
+
+  const { getCat: cat } = data; // Extract the cat object from the query resu
+
+
 
   return (
     <div className="profile-container">
@@ -59,7 +68,12 @@ const ProfilePage = () => {
         {/* <p>Email: {idToken.data.email}</p> */}
       </div>
       <div className="user-cat">
-      <CatCard />
+      <CatCard 
+          name={cat.name}
+          breed={cat.breed}
+          age={cat.age}
+          temperament={cat.temperament}
+      />
       </div>
 
    <div className='jobs-container'>

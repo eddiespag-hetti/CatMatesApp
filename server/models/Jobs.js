@@ -13,6 +13,12 @@ const jobSchema = new Schema({
     type: String,
     required: true,
   },
+  
+    cats: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Cat'
+  }],
+
 });
 
 // Create a new Mongoose model using the job schema

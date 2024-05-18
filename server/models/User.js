@@ -1,5 +1,5 @@
 const { Schema, model} = require("mongoose");
-
+const Cat = require("../models/Cat"); // Import the Cat model
 // const { Schema, model} = mongoose;
 const bcrypt = require("bcrypt");
 
@@ -42,12 +42,11 @@ username: {
       ref: 'Job',
     },
   ],
+   // Embedding Cat model within User model
+   cats: [Cat.schema], // Reference the Cat schema
+  
 
-  // Reference the Cats model
-  cats: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Cat'
-  }],
+
 
 });
 

@@ -4,84 +4,95 @@
       "breed": "Black Tabbie",
       "age": 3,
       "temperament": "Calm",
-      "owner": "john@example.com"
+      "owner": "664867f8b49b12aca13c7669"
+      
     },
     {
       "name": "Louie",
       "breed": "Tabbie",
       "age": 2,
       "temperament": "Playful",
-      "owner": "jane@example.com"
+      "owner": "664867f8b49b12aca13c766c"
     },
     {
       "name": "Moira",
       "breed": "Maine Coon",
       "age": 1,
       "temperament": "Cuddly",
-      "owner": "alice@example.com"
+      "owner": "664867f8b49b12aca13c766d"
+      
     },
     {
       "name": "Lola",
       "breed": "Ragdoll",
       "age": 5,
       "temperament": "Friendly",
-      "owner": "bob@example.com"
+      "owner": "664867f8b49b12aca13c766e"
+      
     },
     {
       "name": "Bobby",
       "breed": "Scottish Fold",
       "age": 3,
-      "temperament": "Energetic",
-      "owner": "becca@example.com"
+      "temperament": "Intelligent",
+      "owner": "664867f8b49b12aca13c766b"
+      
     },
     {
       "name": "Charlie",
       "breed": "Sphynx",
       "age": 2,
       "temperament": "Mischievous",
-      "owner": "colleen@example.com"
+      "owner": "664867f8b49b12aca13c766f"
+     
     },
     {
       "name": "Garfield",
       "breed": "British Shorthair",
       "age": 6,
       "temperament": "Lazy",
-      "ownerEmail": "andrew@example.com"
+      "owner": "664867f8b49b12aca13c766a"
+    
     },
     {
       "name": "Lily",
       "breed": "Bengal",
       "age": 4,
       "temperament": "Adventurous",
-      "owner": "lucy@example.com"
+      "owner": "664867f8b49b12aca13c7670"
+      
     },
     {
       "name": "Killer",
       "breed": "Norwegian Forest",
       "age": 7,
       "temperament": "Independent",
-      "ownerEmail": "nessa@example.com"
+      "owner": "664867f8b49b12aca13c7671"
+    
     },
     {
       "name": "Bronson",
       "breed": "Maine Coon",
       "age": 4,
       "temperament": "Gentle",
-      "owner": "oasis@example.com"
+      "owner": "664867f8b49b12aca13c7673"
+      
     },
     {
       "name": "Mavis",
       "breed": "Persian",
       "age": 5,
       "temperament": "Affectionate",
-      "owner": "harry@example.com"
+      "owner": "664867f8b49b12aca13c7672"
+      
     },
     {
       "name": "Winston",
       "breed": "Siamese",
       "age": 3,
       "temperament": "Intelligent",
-      "owner": "kylie@example.com"
+      "owner": "664867f8b49b12aca13c7674"
+      
     }
   ]
   

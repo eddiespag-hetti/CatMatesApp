@@ -48,14 +48,14 @@ query getCat($cat: String!) {
 
 export const ADD_CAT = gql`
 mutation AddCat($name: String!, $age: Int!, $breed: String!, $temperament: String!, $ownerEmail: String!) {
-  addCat(name: $name, age: $age, breed: $breed, temperament: $temperament, owner: $
+  addCat(name: $name, age: $age, breed: $breed, temperament: $temperament, ownerId: $
     ownerId) {
       _id
       name
       age
       breed
       temperament
-      owner
+      ownerId
       }
       }
 

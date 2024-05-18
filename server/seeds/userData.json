@@ -5,7 +5,7 @@
       "username": "johnnyd",
       "email": "john@example.com",
       "password": "password123",
-      "cat": [],
+      "cats": "664863620631b0a0828719ad",
       "owner": true
     },
     {
@@ -14,7 +14,7 @@
       "username": "smitty",
       "email": "jane@example.com",
       "password": "password1234",
-      "cat": [],
+      "cats": "664863620631b0a0828719ab",
       "owner": true
     },
     {
@@ -23,7 +23,7 @@
       "username": "aliceJo",
       "email": "alice@example.com",
       "password": "password12345",
-      "cat": [],
+      "cats": "664863620631b0a0828719ac",
       "owner": true
     
     },
@@ -33,7 +33,7 @@
       "email": "bob@example.com",
       "username": "bobbyb",
       "password": "password123456",
-      "cat": [],
+      "cats": "664863620631b0a0828719aa",
       "owner": true
     },
     {
@@ -42,7 +42,7 @@
         "username": "wattys",
         "email": "becca@example.com",
         "password": "password1234567",
-        "cat": [],
+        "cats": "664863620631b0a0828719ae",
         "owner": true
       },
       {
@@ -51,7 +51,7 @@
         "username": "cslater",
         "email": "colleen@example.com",
         "password": "password1212",
-        "cat": [],
+        "cats": "664863620631b0a0828719af",
         "owner": true
       },
       {
@@ -60,7 +60,7 @@
         "username": "andydee",
         "email": "andrew@example.com",
         "password": "password1213",
-        "cat": [],
+        "cats": "664863620631b0a0828719b0",
         "owner": true
       },
       {
@@ -69,7 +69,7 @@
         "username": "lucyk",
         "email": "lucy@example.com",
         "password": "password1214",
-        "cat": [],
+        "cats": "664863620631b0a0828719b1",
         "owner": true
       },
       {
@@ -78,7 +78,7 @@
         "username": "vannyp",
         "email": "nessa@example.com",
         "password": "password1215",
-        "cat": [],
+        "cats": "664863620631b0a0828719b2",
         "owner": true
       },
       {
@@ -87,7 +87,7 @@
         "username": "rkid",
         "email": "oasis@example.com",
         "password": "password1216",
-        "cat": [],
+        "cats": "664863620631b0a0828719b3",
         "owner": true
       },
       {
@@ -96,7 +96,7 @@
         "username": "harrytot",
         "email": "harry@example.com",
         "password": "password1216",
-        "cat": [],
+        "cats": "664863620631b0a0828719b4",
         "owner": true
       },
       {
@@ -105,7 +105,7 @@
         "username": "kyliek",
         "email": "kylie@example.com",
         "password": "password1216",
-        "cat": [],
+        "cats": "664863620631b0a0828719b5",
         "owner": true
       }
    

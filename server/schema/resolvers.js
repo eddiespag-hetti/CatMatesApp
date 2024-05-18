@@ -5,6 +5,33 @@ const { signToken } = require("../utils/auth");
 const bcrypt = require("bcrypt");
 
 const resolvers = {
+
+  Query: {
+    getUserById: async (_, { userId }) => {
+      try {
+        return await User.findById(userId);
+      } catch (err) {
+        throw new AuthenticationError('Failed to fetch user');
+      }
+    },
+    getCatsByOwnerId: async (_, { ownerId }) => {
+      try {
+        return await Cat.find({ ownerId });
+      } catch (err) {
+        throw new AuthenticationError('Failed to fetch cats');
+      }
+    },
+    getJobById: async (_, { jobId }) => {
+      try {
+        return await Job.findById(jobId);
+      } catch (err) {
+        throw new AuthenticationError('Failed to fetch job');
+      }
+    },
+  },
+
+
+
   Mutation: {
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email }).populate("jobs");
@@ -47,31 +74,48 @@ const resolvers = {
 
         return job;
       }
-      throw AuthenticationError;
-      ("You need to be logged in!");
+      throw AuthenticationError("You need to be logged in!");
     },
+    addCat: async (_, args) => {
+      try {
+        const newCat = await Cat.create(args);
+        return newCat;
+      } catch (err) {
+        throw new Error('Failed to create cat');
+      }
+    },
+
+    },
+  }
+  
+  module.exports = resolvers;
+
+
 
 
 // getCat: async (parent, { }),
 
 
 
-    addCat: async (parent, { name, breed, age, temperament, ownerId }, context) => {
-      if (context.user) {
-        const cat = await Cat.create({
-          name,
-          breed,
-          age,
-          temperament,
-          ownerId
-        });
-        return cat;
-      }
-      throw AuthenticationError;
-      ("You need to be logged in!");
-    },
-  },
-};
+// addCat: async (_, { name, breed, age, temperament, ownerEmail }) => {
+//   const owner = await User.findOne({ email: ownerEmail });
+//   if (!owner) {
+//     throw new Error('Owner not found');
+//   }
+//   const cat = new Cat({
+//     name,
+//     breed,
+//     age,
+//     temperament,
+//     owner: owner._id
+//   });
+//   await cat.save();
+//   return cat;
+// },
+
+
+
+
 
 //     deleteJob: async (_, { id }) => {
 //       try {
@@ -85,4 +129,3 @@ const resolvers = {
 //     }
 //   }
 
-module.exports = resolvers;
