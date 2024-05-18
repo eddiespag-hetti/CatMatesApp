@@ -15,9 +15,15 @@ db.once('open', async () => {
 
     await User.create(userData);
     await Job.create(jobData)
+    
 
     for (let i = 0; i < catData.length; i++)
     await Cat.create(catData);
+
+
+    
+
+
 console.log('all done!');
 process.exit(0);
 });

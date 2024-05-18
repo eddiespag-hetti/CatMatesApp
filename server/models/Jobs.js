@@ -1,17 +1,22 @@
-const mongoose = require('mongoose');
+// Import the Mongoose module and create a new Schema object
+const { Schema, model } = require("mongoose");
 
-const jobSchema = new mongoose.Schema({
+// Define the schema for a job posting
+const jobSchema = new Schema({
+  // The job title is a required string
   title: {
     type: String,
-    required: true
+    required: true,
   },
+  // The job description is a required string
   description: {
     type: String,
-    required: true
+    required: true,
   },
- 
 });
 
-const Job = mongoose.model('Job', jobSchema);
+// Create a new Mongoose model using the job schema
+const Job = model("Job", jobSchema);
 
+// Export the Job model for use in other modules
 module.exports = Job;

@@ -66,12 +66,6 @@ type Auth {
   
   }
   
-  `
+  `;
 
- 
-  
-
-  
-
-
-  module.exports = typeDefs;
+module.exports = typeDefs;

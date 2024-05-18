@@ -32,9 +32,37 @@ mutation AddJob($title: String!, $description: String!) {
     title
   }
 }
+`
+
+export const GET_CAT = gql`
+query getCat($cat: String!) {
+  getCat(cat: $cat) {
+    _id
+    name
+   owner
+    }
+    }
+    `;
+
+
+
+export const ADD_CAT = gql`
+mutation AddCat($name: String!, $age: Int!, $breed: String!, $temperament: String!, $ownerEmail: String!) {
+  addCat(name: $name, age: $age, breed: $breed, temperament: $temperament, owner: $
+    ownerId) {
+      _id
+      name
+      age
+      breed
+      temperament
+      owner
+      }
+      }
 
 
 `
+
+
 
 // export const REMOVE_JOB = gql`
 // deleteJob(id: ID!): Boolean {

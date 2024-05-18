@@ -1,40 +1,34 @@
-const mongoose = require("mongoose");
-
-const { Schema } = mongoose;
+const { Schema, model } = require("mongoose");
 
 // Schema for each Cat
 const catSchema = new Schema({
   name: {
     type: String,
     required: true,
-    unique: true,
   },
   breed: {
     type: String,
     required: true,
-    unique: true,
   },
   age: {
     type: Number,
     required: true,
-    unique: true,
   },
   temperament: {
     type: String,
     required: true,
-    unique: true,
   },
-  owner: [{
-    type: Schema.Types.ObjectId,
-    ref: 'User'
-  }],
-
-  
+  owner: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
+  ],
 });
 
-
 // Model for each Cat
-const Cat = mongoose.model("Cat", catSchema);
+const Cat = model("Cat", catSchema);
 
 // Exporting the Cat model
 module.exports = Cat;

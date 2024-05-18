@@ -4,42 +4,42 @@
       "breed": "Black Tabbie",
       "age": 3,
       "temperament": "Calm",
-      "ownerEmail": "john@example.com"
+      "owner": "john@example.com"
     },
     {
       "name": "Louie",
       "breed": "Tabbie",
       "age": 2,
       "temperament": "Playful",
-      "ownerEmail": "jane@example.com"
+      "owner": "jane@example.com"
     },
     {
       "name": "Moira",
       "breed": "Maine Coon",
       "age": 1,
       "temperament": "Cuddly",
-      "ownerEmail": "alice@example.com"
+      "owner": "alice@example.com"
     },
     {
       "name": "Lola",
       "breed": "Ragdoll",
       "age": 5,
       "temperament": "Friendly",
-      "ownerEmail": "bob@example.com"
+      "owner": "bob@example.com"
     },
     {
       "name": "Bobby",
       "breed": "Scottish Fold",
       "age": 3,
       "temperament": "Energetic",
-      "ownerEmail": "becca@example.com"
+      "owner": "becca@example.com"
     },
     {
       "name": "Charlie",
       "breed": "Sphynx",
       "age": 2,
       "temperament": "Mischievous",
-      "ownerEmail": "colleen@example.com"
+      "owner": "colleen@example.com"
     },
     {
       "name": "Garfield",
@@ -53,7 +53,7 @@
       "breed": "Bengal",
       "age": 4,
       "temperament": "Adventurous",
-      "ownerEmail": "lucy@example.com"
+      "owner": "lucy@example.com"
     },
     {
       "name": "Killer",
@@ -67,21 +67,21 @@
       "breed": "Maine Coon",
       "age": 4,
       "temperament": "Gentle",
-      "ownerEmail": "oasis@example.com"
+      "owner": "oasis@example.com"
     },
     {
       "name": "Mavis",
       "breed": "Persian",
       "age": 5,
       "temperament": "Affectionate",
-      "ownerEmail": "harry@example.com"
+      "owner": "harry@example.com"
     },
     {
       "name": "Winston",
       "breed": "Siamese",
       "age": 3,
       "temperament": "Intelligent",
-      "ownerEmail": "kylie@example.com"
+      "owner": "kylie@example.com"
     }
   ]
   

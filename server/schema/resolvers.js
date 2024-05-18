@@ -1,13 +1,13 @@
 // Import necessary modules
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Job } = require("../models");
+const { User, Job, Cat } = require("../models");
 const { signToken } = require("../utils/auth");
 const bcrypt = require("bcrypt");
 
 const resolvers = {
   Mutation: {
     login: async (parent, { email, password }) => {
-      const user = await User.findOne({ email }).populate('jobs');
+      const user = await User.findOne({ email }).populate("jobs");
 
       if (!user) {
         throw new AuthenticationError("Incorrect email or password!");
@@ -37,7 +37,7 @@ const resolvers = {
       if (context.user) {
         const job = await Job.create({
           title,
-          description
+          description,
         });
 
         await User.findOneAndUpdate(
@@ -48,8 +48,30 @@ const resolvers = {
         return job;
       }
       throw AuthenticationError;
-      ('You need to be logged in!');
+      ("You need to be logged in!");
     },
+
+
+// getCat: async (parent, { }),
+
+
+
+    addCat: async (parent, { name, breed, age, temperament, ownerId }, context) => {
+      if (context.user) {
+        const cat = await Cat.create({
+          name,
+          breed,
+          age,
+          temperament,
+          ownerId
+        });
+        return cat;
+      }
+      throw AuthenticationError;
+      ("You need to be logged in!");
+    },
+  },
+};
 
 //     deleteJob: async (_, { id }) => {
 //       try {
@@ -62,19 +84,5 @@ const resolvers = {
 //       }
 //     }
 //   }
-  }};
-
-
-
-
-
-
-
-
-
-
-
- 
-
 
 module.exports = resolvers;
