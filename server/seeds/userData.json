@@ -1,113 +1,110 @@
 [
-    {
-      "firstName": "John",
-      "lastName": "Doe",
-      "username": "johnnyd",
-      "email": "john@example.com",
-      "password": "password123",
-      "cats": "664863620631b0a0828719ad",
-      "owner": true
-    },
-    {
-      "firstName": "Jane",
-      "lastName": "Smith",
-      "username": "smitty",
-      "email": "jane@example.com",
-      "password": "password1234",
-      "cats": "664863620631b0a0828719ab",
-      "owner": true
-    },
-    {
-      "firstName": "Alice",
-      "lastName": "Johnson",
-      "username": "aliceJo",
-      "email": "alice@example.com",
-      "password": "password12345",
-      "cats": "664863620631b0a0828719ac",
-      "owner": true
-    
-    },
-    {
-      "firstName": "Bob",
-      "lastName": "Brown",
-      "email": "bob@example.com",
-      "username": "bobbyb",
-      "password": "password123456",
-      "cats": "664863620631b0a0828719aa",
-      "owner": true
-    },
-    {
-        "firstName": "Rebecca",
-        "lastName": "Watts",
-        "username": "wattys",
-        "email": "becca@example.com",
-        "password": "password1234567",
-        "cats": "664863620631b0a0828719ae",
-        "owner": true
-      },
-      {
-        "firstName": "Colleen",
-        "lastName": "Slater",
-        "username": "cslater",
-        "email": "colleen@example.com",
-        "password": "password1212",
-        "cats": "664863620631b0a0828719af",
-        "owner": true
-      },
-      {
-        "firstName": "Andrew",
-        "lastName": "Davis",
-        "username": "andydee",
-        "email": "andrew@example.com",
-        "password": "password1213",
-        "cats": "664863620631b0a0828719b0",
-        "owner": true
-      },
-      {
-        "firstName": "Lucy",
-        "lastName": "Kennedy",
-        "username": "lucyk",
-        "email": "lucy@example.com",
-        "password": "password1214",
-        "cats": "664863620631b0a0828719b1",
-        "owner": true
-      },
-      {
-        "firstName": "Vanessa",
-        "lastName": "Pantoulus",
-        "username": "vannyp",
-        "email": "nessa@example.com",
-        "password": "password1215",
-        "cats": "664863620631b0a0828719b2",
-        "owner": true
-      },
-      {
-        "firstName": "Liam",
-        "lastName": "Gallagher",
-        "username": "rkid",
-        "email": "oasis@example.com",
-        "password": "password1216",
-        "cats": "664863620631b0a0828719b3",
-        "owner": true
-      },
-      {
-        "firstName": "Harry",
-        "lastName": "Trotter",
-        "username": "harrytot",
-        "email": "harry@example.com",
-        "password": "password1216",
-        "cats": "664863620631b0a0828719b4",
-        "owner": true
-      },
-      {
-        "firstName": "Kylie",
-        "lastName": "Kinder",
-        "username": "kyliek",
-        "email": "kylie@example.com",
-        "password": "password1216",
-        "cats": "664863620631b0a0828719b5",
-        "owner": true
-      }
-   
-  ]
-  
+  {
+    "firstName": "John",
+    "lastName": "Doe",
+    "username": "johnnyd",
+    "email": "john@example.com",
+    "password": "password123",
+    "cats": [],
+    "owner": true
+  },
+  {
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "username": "smitty",
+    "email": "jane@example.com",
+    "password": "password1234",
+    "cats": [],
+    "owner": true
+  },
+  {
+    "firstName": "Alice",
+    "lastName": "Johnson",
+    "username": "aliceJo",
+    "email": "alice@example.com",
+    "password": "password12345",
+    "cats": [],
+    "owner": true
+  },
+  {
+    "firstName": "Bob",
+    "lastName": "Brown",
+    "email": "bob@example.com",
+    "username": "bobbyb",
+    "password": "password123456",
+    "cats": [],
+    "owner": true
+  },
+  {
+    "firstName": "Rebecca",
+    "lastName": "Watts",
+    "username": "wattys",
+    "email": "becca@example.com",
+    "password": "password1234567",
+    "cats": [],
+    "owner": true
+  },
+  {
+    "firstName": "Colleen",
+    "lastName": "Slater",
+    "username": "cslater",
+    "email": "colleen@example.com",
+    "password": "password1212",
+    "cats": [],
+    "owner": true
+  },
+  {
+    "firstName": "Andrew",
+    "lastName": "Davis",
+    "username": "andydee",
+    "email": "andrew@example.com",
+    "password": "password1213",
+    "cats": [],
+    "owner": true
+  },
+  {
+    "firstName": "Lucy",
+    "lastName": "Kennedy",
+    "username": "lucyk",
+    "email": "lucy@example.com",
+    "password": "password1214",
+    "cats": [],
+    "owner": true
+  },
+  {
+    "firstName": "Vanessa",
+    "lastName": "Pantoulus",
+    "username": "vannyp",
+    "email": "nessa@example.com",
+    "password": "password1215",
+    "cats": [],
+    "owner": true
+  },
+  {
+    "firstName": "Liam",
+    "lastName": "Gallagher",
+    "username": "rkid",
+    "email": "oasis@example.com",
+    "password": "password1216",
+    "cats": [],
+    "owner": true
+  },
+  {
+    "firstName": "Harry",
+    "lastName": "Trotter",
+    "username": "harrytot",
+    "email": "harry@example.com",
+    "password": "password1216",
+    "cats": [],
+    "owner": true
+  },
+  {
+    "firstName": "Kylie",
+    "lastName": "Kinder",
+    "username": "kyliek",
+    "email": "kylie@example.com",
+    "password": "password1216",
+    "cats": [],
+    "owner": true
+  }
+]

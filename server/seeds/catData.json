@@ -1,98 +1,86 @@
 [
-    {
-      "name": "Ovie",
-      "breed": "Black Tabbie",
-      "age": 3,
-      "temperament": "Calm",
-      "owner": "664867f8b49b12aca13c7669"
-      
-    },
-    {
-      "name": "Louie",
-      "breed": "Tabbie",
-      "age": 2,
-      "temperament": "Playful",
-      "owner": "664867f8b49b12aca13c766c"
-    },
-    {
-      "name": "Moira",
-      "breed": "Maine Coon",
-      "age": 1,
-      "temperament": "Cuddly",
-      "owner": "664867f8b49b12aca13c766d"
-      
-    },
-    {
-      "name": "Lola",
-      "breed": "Ragdoll",
-      "age": 5,
-      "temperament": "Friendly",
-      "owner": "664867f8b49b12aca13c766e"
-      
-    },
-    {
-      "name": "Bobby",
-      "breed": "Scottish Fold",
-      "age": 3,
-      "temperament": "Intelligent",
-      "owner": "664867f8b49b12aca13c766b"
-      
-    },
-    {
-      "name": "Charlie",
-      "breed": "Sphynx",
-      "age": 2,
-      "temperament": "Mischievous",
-      "owner": "664867f8b49b12aca13c766f"
-     
-    },
-    {
-      "name": "Garfield",
-      "breed": "British Shorthair",
-      "age": 6,
-      "temperament": "Lazy",
-      "owner": "664867f8b49b12aca13c766a"
-    
-    },
-    {
-      "name": "Lily",
-      "breed": "Bengal",
-      "age": 4,
-      "temperament": "Adventurous",
-      "owner": "664867f8b49b12aca13c7670"
-      
-    },
-    {
-      "name": "Killer",
-      "breed": "Norwegian Forest",
-      "age": 7,
-      "temperament": "Independent",
-      "owner": "664867f8b49b12aca13c7671"
-    
-    },
-    {
-      "name": "Bronson",
-      "breed": "Maine Coon",
-      "age": 4,
-      "temperament": "Gentle",
-      "owner": "664867f8b49b12aca13c7673"
-      
-    },
-    {
-      "name": "Mavis",
-      "breed": "Persian",
-      "age": 5,
-      "temperament": "Affectionate",
-      "owner": "664867f8b49b12aca13c7672"
-      
-    },
-    {
-      "name": "Winston",
-      "breed": "Siamese",
-      "age": 3,
-      "temperament": "Intelligent",
-      "owner": "664867f8b49b12aca13c7674"
-      
-    }
-  ]
-  
+  {
+    "name": "Ovie",
+    "breed": "Black Tabbie",
+    "age": 3,
+    "temperament": "Calm",
+    "ownerEmail": "john@example.com"  
+  },
+  {
+    "name": "Louie",
+    "breed": "Tabbie",
+    "age": 2,
+    "temperament": "Playful",
+    "ownerEmail": "jane@example.com"
+  },
+  {
+    "name": "Moira",
+    "breed": "Maine Coon",
+    "age": 1,
+    "temperament": "Cuddly",
+    "ownerEmail": "alice@example.com"
+  },
+  {
+    "name": "Lola",
+    "breed": "Ragdoll",
+    "age": 5,
+    "temperament": "Friendly",
+    "ownerEmail": "bob@example.com"
+  },
+  {
+    "name": "Bobby",
+    "breed": "Scottish Fold",
+    "age": 3,
+    "temperament": "Intelligent",
+    "ownerEmail": "becca@example.com"
+  },
+  {
+    "name": "Charlie",
+    "breed": "Sphynx",
+    "age": 2,
+    "temperament": "Mischievous",
+    "ownerEmail": "colleen@example.com"
+  },
+  {
+    "name": "Garfield",
+    "breed": "British Shorthair",
+    "age": 6,
+    "temperament": "Lazy",
+    "ownerEmail": "andrew@example.com"
+  },
+  {
+    "name": "Lily",
+    "breed": "Bengal",
+    "age": 4,
+    "temperament": "Adventurous",
+    "ownerEmail": "lucy@example.com"
+  },
+  {
+    "name": "Killer",
+    "breed": "Norwegian Forest",
+    "age": 7,
+    "temperament": "Independent",
+    "ownerEmail": "nessa@example.com"
+  },
+  {
+    "name": "Bronson",
+    "breed": "Maine Coon",
+    "age": 4,
+    "temperament": "Gentle",
+    "ownerEmail": "oasis@example.com"
+  },
+  {
+    "name": "Mavis",
+    "breed": "Persian",
+    "age": 5,
+    "temperament": "Affectionate",
+    "ownerEmail": "harry@example.com"
+  },
+  {
+    "name": "Winston",
+    "breed": "Siamese",
+    "age": 3,
+    "temperament": "Intelligent",
+    "ownerEmail": "kylie@example.com"
+  }
+]

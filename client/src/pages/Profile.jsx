@@ -49,15 +49,15 @@ const ProfilePage = () => {
   };
 
 
-   // Use the useQuery hook to fetch the user's cat information
-   const { loading, error, data } = useQuery(GET_CAT, {
-    variables: { cat: 'catName' }, // Pass the cat's name as a variable
-  });
+  //  // Use the useQuery hook to fetch the user's cat information
+  //  const { loading, error, data } = useQuery(GET_CAT, {
+  //   variables: { cat: 'catName' }, // Pass the cat's name as a variable
+  // });
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>;
+  // if (loading) return <p>Loading...</p>;
+  // if (error) return <p>Error: {error.message}</p>;
 
-  const { getCat: cat } = data; // Extract the cat object from the query resu
+  // const { getCat: cat } = data; // Extract the cat object from the query resu
 
 
 
@@ -69,10 +69,7 @@ const ProfilePage = () => {
       </div>
       <div className="user-cat">
       <CatCard 
-          name={cat.name}
-          breed={cat.breed}
-          age={cat.age}
-          temperament={cat.temperament}
+         
       />
       </div>
 

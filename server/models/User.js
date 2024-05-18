@@ -42,6 +42,8 @@ username: {
       ref: 'Job',
     },
   ],
+
+  
    // Embedding Cat model within User model
    cats: [Cat.schema], // Reference the Cat schema
   

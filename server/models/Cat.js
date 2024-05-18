@@ -1,4 +1,5 @@
 const { Schema, model } = require("mongoose");
+const User = require('../models/User')
 
 // Schema for each Cat
 const catSchema = new Schema({
@@ -18,13 +19,13 @@ const catSchema = new Schema({
     type: String,
     required: true,
   },
-  owner: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "User",
-      required: true,
-    },
-  ],
+// Embedding User model within Cat model
+  owner: [{
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  }],
+// References the User Schema
+ 
 });
 
 // Model for each Cat
