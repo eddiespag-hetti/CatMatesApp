@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { useMutation, useQuery } from '@apollo/client';
 import { POST_JOB } from '../utils/mutations';
-import JobItem from '../components/Jobs/jobItem.jsx';
+// import JobItem from '../components/Jobs/jobItem.jsx';
+import CurrentJobs from '../components/Jobs/CurrentJobs.jsx'
 import CatCard from '../components/CatCard/CatCard.jsx';
 import Auth from '../utils/auth';
 import '../index.css';
 import { QUERY_CATS } from '../utils/queries';
+
+
+
 
 const ProfilePage = () => {
   const idToken = Auth.getProfile();
@@ -29,7 +33,7 @@ const ProfilePage = () => {
           if (cat.owner.some(owner => owner.username === Auth.getProfile().data.username)) {
             return {
               ...cat,
-              jobs: [...cat.jobs, postJob]
+              jobs: [...cat.jobs, addJob]
             };
           }
           return cat;
@@ -75,6 +79,9 @@ const ProfilePage = () => {
     }
   };
 
+
+
+
   return (
     <div className="profile-container">
       <div className="profile-info">
@@ -113,13 +120,14 @@ const ProfilePage = () => {
         </div>
         <div className="current-jobs">
           <h2 className="job-heading">Your Current Jobs:</h2>
-          {cats
+          <CurrentJobs cats={cats} idToken={idToken} />
+          {/* {cats
             .filter(cat => cat.owner.some(owner => owner.username === idToken.data.username))
             .flatMap(cat => cat.jobs)
             .map((job, index) => (
               <JobItem key={index} job={job} />
             ))
-          }
+          } */}
         </div>
       </div>
     </div>

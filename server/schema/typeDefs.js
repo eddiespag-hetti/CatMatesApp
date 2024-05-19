@@ -1,57 +1,3 @@
-// // Define GraphQL type definitions
-// const typeDefs = `
-//   type User {
-//     _id: ID!
-//     firstName: String
-//     lastName: String
-//     username: String!
-//     email: String!
-//     password: String!
-//     jobs: [Job]
-//     cats: [Cat]
-//   }
-
-//   type Cat {
-//     _id: ID!
-//     name: String!
-//     breed: String!
-//     age: Int!
-//     temperament: String!
-//     ownerEmail: User!
-//   }
-
-//   type Job {
-//     _id: ID!
-//     title: String!
-//     description: String!
-//     cats: [Cat]
-//   }
-
-//   type Auth {
-//     token: String!
-//     user: User
-    
-  
-//   }
-
-//   type Query {
-//     getUserById(userId: ID!): User
-//     getCatsByOwnerId(ownerId: ID!): [Cat]
-//     getJobById(jobId: ID!): Job
-//   }
-
-//   type Mutation {
-//     login(email: String!, password: String!): Auth
-//     addUser(firstName: String, lastName: String, username: String!, email: String!, password: String!): Auth
-//     addJob(title: String!, description: String!, catIds: [ID]): Job
-//     addCat(name: String!, breed: String!, age: Int!, temperament: String!, ownerId: ID!): Cat
-//   }
-  
-// `
-
-
-
-//  module.exports = typeDefs;
 
 
 const typeDefs = `
@@ -106,6 +52,7 @@ type Auth {
         cat(id: ID!): Cat
         jobs: [Job]
         getCats: [Cat]
+        me: User
         
         getUserById(userId: ID!): User
     getCatsByOwnerId(ownerId: ID!): [Cat]

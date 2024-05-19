@@ -1,6 +1,6 @@
 const { Schema, model} = require("mongoose");
 const Cat = require("../models/Cat"); // Import the Cat model
-// const { Schema, model} = mongoose;
+
 const bcrypt = require("bcrypt");
 
 

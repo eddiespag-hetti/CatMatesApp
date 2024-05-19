@@ -1,9 +1,6 @@
 import React from 'react';
 import './jobItem.css';
 
-
-
-
 const JobItem = ({ job }) => {
   return (
     <div className="job-card">
@@ -12,8 +9,8 @@ const JobItem = ({ job }) => {
       </div>
       <div className="job-card-body">
         <p className="job-description">{job.description}</p>
-        <button className='edit-btn'>Update</button>
-        <button className='delete-btn'>Remove</button>
+        <button className="edit-btn">Update</button>
+        <button className="delete-btn">Remove</button>
       </div>
     </div>
   );
