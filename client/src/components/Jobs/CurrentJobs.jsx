@@ -1,18 +1,23 @@
+// CurrentJobs.jsx
 import React from 'react';
-import JobItem from './jobItem'; // Make sure the import path is correct
-import './jobItem.css';
 
 const CurrentJobs = ({ cats, idToken }) => {
+  const currentJobs = cats
+    .filter(cat => cat.owner.some(owner => owner.username === idToken.data.username))
+    .flatMap(cat => cat.jobs);
+
   return (
-    <div className="current-jobs">
-    
-      {cats
-        .filter(cat => cat.owner.some(owner => owner.username === idToken.data.username))
-        .flatMap(cat => cat.jobs)
-        .map((job, index) => (
-          <JobItem key={index} job={job} />
+    <div>
+      {currentJobs.length > 0 ? (
+        currentJobs.map((job, index) => (
+          <div key={index}>
+            <h3>{job.title}</h3>
+            <p>{job.description}</p>
+          </div>
         ))
-      }
+      ) : (
+        <p>No jobs found.</p>
+      )}
     </div>
   );
 };

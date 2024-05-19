@@ -1,4 +1,5 @@
 import "../furryFriends.css";
+import { useNavigate } from 'react-router-dom';
 
 // Gallery of Cat's registered to be sat
 const FurryFriends = () => {
@@ -23,6 +24,14 @@ const FurryFriends = () => {
 
 // Each card will show the Cat's name and a 'Sit Me' button
 const Card = ({ imgSrc, title }) => {
+
+
+    const navigate = useNavigate();
+  
+    const handleSitMeClick = () => {
+      navigate(`/CatInfo/${title}`);
+    };
+  
   return (
   
     <div className="card">
@@ -30,7 +39,7 @@ const Card = ({ imgSrc, title }) => {
       <div className="card-content">
         <h2 className="card-title">{title}</h2>
 
-        <button className="card-button">Sit Me</button>
+        <button className="card-button" oncClick={handleSitMeClick}>Sit Me</button>
       
       </div>
     </div>

@@ -5,6 +5,8 @@ const CatCard = ({ cat }) => {
   // Construct the path to the image in the public folder
   const imagePath = `${process.env.PUBLIC_URL}../public/img/${cat.image}`;
 
+
+
   return (
     <div className="cat-card">
       <img src={imagePath} alt={cat.name} className="cat-image" />

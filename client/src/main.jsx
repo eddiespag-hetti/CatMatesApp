@@ -13,6 +13,7 @@ import ProfilePage from './pages/Profile.jsx';
 import SignUpForm from './components/SignUp/SignupForm.jsx';
 import LoginForm from './components/Login/Login.jsx';
 import FurryFriends from './pages/FurryFriends.jsx';
+import CatInfo from './pages/CatInfo.jsx';
 
 
 
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
 {
   path: '/Login',
   element: <LoginForm />
+},
+{
+path: '/CatInfo',
+element: <CatInfo />
 }
     ],
   },

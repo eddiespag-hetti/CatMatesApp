@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
 import { useMutation, useQuery } from '@apollo/client';
 import { POST_JOB } from '../utils/mutations';
-// import JobItem from '../components/Jobs/jobItem.jsx';
-import CurrentJobs from '../components/Jobs/CurrentJobs.jsx'
+import CurrentJobs from '../components/Jobs/CurrentJobs.jsx';
 import CatCard from '../components/CatCard/CatCard.jsx';
 import Auth from '../utils/auth';
 import '../index.css';
 import { QUERY_CATS } from '../utils/queries';
-
-
-
 
 const ProfilePage = () => {
   const idToken = Auth.getProfile();
@@ -33,7 +29,7 @@ const ProfilePage = () => {
           if (cat.owner.some(owner => owner.username === Auth.getProfile().data.username)) {
             return {
               ...cat,
-              jobs: [...cat.jobs, addJob]
+              jobs: [...cat.jobs, postJob]
             };
           }
           return cat;
@@ -79,16 +75,17 @@ const ProfilePage = () => {
     }
   };
 
-
-
-
   return (
     <div className="profile-container">
       <div className="profile-info">
         <h2>Welcome back {idToken.data.username}!</h2>
       </div>
       <div className="user-cat">
-        {!loading ? cats.map(cat => cat.owner.filter(owner => owner.username === Auth.getProfile().data.username).map(user => <CatCard cat={cat} key={cat._id} />)) : ""}
+        {!loading ? cats.map(cat => 
+          cat.owner.filter(owner => owner.username === Auth.getProfile().data.username).map(user => 
+            <CatCard cat={cat} key={cat._id} />
+          )
+        ) : ""}
       </div>
       <div className='jobs-container'>
         <div className="job-form">
@@ -121,13 +118,13 @@ const ProfilePage = () => {
         <div className="current-jobs">
           <h2 className="job-heading">Your Current Jobs:</h2>
           <CurrentJobs cats={cats} idToken={idToken} />
-          {/* {cats
+          {cats
             .filter(cat => cat.owner.some(owner => owner.username === idToken.data.username))
             .flatMap(cat => cat.jobs)
             .map((job, index) => (
               <JobItem key={index} job={job} />
             ))
-          } */}
+          }
         </div>
       </div>
     </div>

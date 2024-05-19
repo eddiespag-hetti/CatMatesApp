@@ -25,7 +25,7 @@ export const ADD_USER = gql`
 `;
 
 export const POST_JOB = gql`
-  mutation AddJob($title: String!, $description: String!) {
+  mutation addJob($title: String!, $description: String!) {
     addJob(title: $title, description: $description) {
       _id
       description
