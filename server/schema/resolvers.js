@@ -106,39 +106,3 @@ const resolvers = {
 
 
 
-// getCat: async (parent, { }),
-
-
-
-// addCat: async (_, { name, breed, age, temperament, ownerEmail }) => {
-//   const owner = await User.findOne({ email: ownerEmail });
-//   if (!owner) {
-//     throw new Error('Owner not found');
-//   }
-//   const cat = new Cat({
-//     name,
-//     breed,
-//     age,
-//     temperament,
-//     owner: owner._id
-//   });
-//   await cat.save();
-//   return cat;
-// },
-
-
-
-
-
-//     deleteJob: async (_, { id }) => {
-//       try {
-//         // Find the job by ID and delete it
-//         await Job.findByIdAndDelete(id);
-//         return true; // Return true if deletion is successful
-//       } catch (error) {
-//         console.error('Error deleting job:', error);
-//         return false; // Return false if deletion fails
-//       }
-//     }
-//   }
-

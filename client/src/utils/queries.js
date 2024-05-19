@@ -1,17 +1,24 @@
 
-import { gql } from '@apollo/client'
+
+
+import { gql } from '@apollo/client';
 
 export const QUERY_CATS = gql`
-
-query GetCats {
+  query getCats {
     getCats {
+      _id
+      name
+      breed
+      age
+      temperament
       owner {
         username
       }
-      name
-      age
-      breed
-      temperament
+      jobs {
+        _id
+        title
+        description
+      }
     }
   }
-  `
+`;

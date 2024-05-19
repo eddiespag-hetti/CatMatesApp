@@ -43,9 +43,12 @@ username: {
     },
   ],
 
-  
+
    // Embedding Cat model within User model
-   cats: [Cat.schema], // Reference the Cat schema
+   cats: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Cat'
+  }],
   
 
 

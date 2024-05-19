@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-import { useMutation } from '@apollo/client';
-import { useQuery } from '@apollo/client';
-import { GET_CAT } from '../utils/mutations.js';
-import { POST_JOB } from '../utils/mutations'; // Import the GraphQL mutation
-import JobItem from '../components/Jobs/jobItem.jsx'; // Import the JobItem component
+import { useMutation, useQuery } from '@apollo/client';
+import { POST_JOB } from '../utils/mutations';
+import JobItem from '../components/Jobs/jobItem.jsx';
 import CatCard from '../components/CatCard/CatCard.jsx';
 import Auth from '../utils/auth';
-import '../index.css'; // Import the provided CSS file
-import { QUERY_CATS } from '../utils/queries.js';
+import '../index.css';
+import { QUERY_CATS } from '../utils/queries';
 
 const ProfilePage = () => {
   const idToken = Auth.getProfile();
@@ -18,11 +16,37 @@ const ProfilePage = () => {
     description: '',
   });
 
-const {loading, data} = useQuery(QUERY_CATS);
-const cats = data?.getCats ||  [];
-console.log(cats);
+  const { loading, data, refetch } = useQuery(QUERY_CATS);
+  const cats = data?.getCats || [];
+  console.log(cats);
 
-  const [postJob] = useMutation(POST_JOB); // Define the mutation function
+  const [postJob] = useMutation(POST_JOB, {
+    update(cache, { data: { postJob } }) {
+      try {
+        const { getCats } = cache.readQuery({ query: QUERY_CATS });
+
+        const updatedCats = getCats.map(cat => {
+          if (cat.owner.some(owner => owner.username === Auth.getProfile().data.username)) {
+            return {
+              ...cat,
+              jobs: [...cat.jobs, postJob]
+            };
+          }
+          return cat;
+        });
+
+        cache.writeQuery({
+          query: QUERY_CATS,
+          data: { getCats: updatedCats },
+        });
+      } catch (e) {
+        console.error(e);
+      }
+    },
+    onCompleted: () => {
+      refetch();
+    }
+  });
 
   const handleJobFormChange = (event) => {
     const { name, value } = event.target;
@@ -35,14 +59,12 @@ console.log(cats);
   const handleSubmitJobForm = async (event) => {
     event.preventDefault();
     try {
-      // Call the mutation with the jobFormData
       await postJob({
         variables: {
           title: jobFormData.title,
           description: jobFormData.description
         }
       });
-      // Clear the form fields after submission
       setJobFormData({
         title: '',
         description: ''
@@ -53,92 +75,55 @@ console.log(cats);
     }
   };
 
-// const [getCat] = useMut(GET_CAT);
-
-// const catId = idToken.data.user.id;
-// console.log(catId);
-// const { loading, data } = getCatById({
-//   variables: { catId }
-//   });
-//   console.log(data);
-//   const cat = data?.getCatById;
-//     console.log(cat);
- 
-
-
-
-
   return (
     <div className="profile-container">
       <div className="profile-info">
         <h2>Welcome back {idToken.data.username}!</h2>
-        {/* <p>Email: {idToken.data.email}</p> */}
       </div>
-{console.log(Auth.getProfile())}
       <div className="user-cat">
-        {!loading?cats.map(cat => cat.owner.filter(owner => owner.username === Auth.getProfile().data.username).map(user => <CatCard cat={cat} />)):""}
-
-</div>
-        
-            
- 
-     
-  
-         
-   
-
-   <div className='jobs-container'>
-  <div className="job-form">
-    <h2>Post a Job</h2>
-    <form onSubmit={handleSubmitJobForm}>
-      <div>
-        <label htmlFor="title">Title:</label>
-        <input
-          type="text"
-          id="title"
-          name="title"
-          value={jobFormData.title}
-          onChange={handleJobFormChange}
-          required
-        />
+        {!loading ? cats.map(cat => cat.owner.filter(owner => owner.username === Auth.getProfile().data.username).map(user => <CatCard cat={cat} key={cat._id} />)) : ""}
       </div>
-      <div>
-        <label htmlFor="description">Description:</label>
-        <textarea
-          id="description"
-          name="description"
-          value={jobFormData.description}
-          onChange={handleJobFormChange}
-          required
-        />
+      <div className='jobs-container'>
+        <div className="job-form">
+          <h2>Post a Job</h2>
+          <form onSubmit={handleSubmitJobForm}>
+            <div>
+              <label htmlFor="title">Title:</label>
+              <input
+                type="text"
+                id="title"
+                name="title"
+                value={jobFormData.title}
+                onChange={handleJobFormChange}
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="description">Description:</label>
+              <textarea
+                id="description"
+                name="description"
+                value={jobFormData.description}
+                onChange={handleJobFormChange}
+                required
+              />
+            </div>
+            <button type="submit">Post Job</button>
+          </form>
+        </div>
+        <div className="current-jobs">
+          <h2 className="job-heading">Your Current Jobs:</h2>
+          {cats
+            .filter(cat => cat.owner.some(owner => owner.username === idToken.data.username))
+            .flatMap(cat => cat.jobs)
+            .map((job, index) => (
+              <JobItem key={index} job={job} />
+            ))
+          }
+        </div>
       </div>
-      <button type="submit">Post Job</button>
-    </form>
-  </div>
-  <div className="current-jobs">
-    <h2 className="job-heading">Your Current Jobs:</h2>
-    {/* Map over the user's jobs and render each as a JobItem */}
-    {idToken.data?.jobs?.map((job, index) => (
-      <JobItem key={index} job={job}/>
-    ))}
-  </div>
-  </div>
-</div>
-
-);
-}
-
-
-
-
-
-
-
-
-
+    </div>
+  );
+};
 
 export default ProfilePage;
-
-
-
-

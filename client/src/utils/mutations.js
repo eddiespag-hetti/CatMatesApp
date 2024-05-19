@@ -89,6 +89,8 @@ query getCat($cat: String!) {
     }
     `;
 
+   
+
 
 
 export const ADD_CAT = gql`
@@ -107,13 +109,3 @@ mutation AddCat($name: String!, $age: Int!, $breed: String!, $temperament: Strin
 
 `
 
-
-
-// export const REMOVE_JOB = gql`
-// deleteJob(id: ID!): Boolean {
-//   deleteJob(id: $id) {
-//     _id
-//     description
-//     title
-//     }
-// `

@@ -4,83 +4,95 @@
     "breed": "Black Tabbie",
     "age": 3,
     "temperament": "Calm",
-    "ownerEmail": "john@example.com"  
+    "ownerEmail": "john@example.com",
+    "image": "ovie.png"  
   },
   {
     "name": "Louie",
     "breed": "Tabbie",
     "age": 2,
     "temperament": "Playful",
-    "ownerEmail": "jane@example.com"
+    "ownerEmail": "jane@example.com",
+    "image": "louie.png" 
   },
   {
     "name": "Moira",
     "breed": "Maine Coon",
     "age": 1,
     "temperament": "Cuddly",
-    "ownerEmail": "alice@example.com"
+    "ownerEmail": "alice@example.com",
+    "image": "moira.png" 
   },
   {
     "name": "Lola",
     "breed": "Ragdoll",
     "age": 5,
     "temperament": "Friendly",
-    "ownerEmail": "bob@example.com"
+    "ownerEmail": "bob@example.com",
+    "image": "lola.png" 
   },
   {
     "name": "Bobby",
     "breed": "Scottish Fold",
     "age": 3,
     "temperament": "Intelligent",
-    "ownerEmail": "becca@example.com"
+    "ownerEmail": "becca@example.com",
+    "image": "bobby.png" 
   },
   {
     "name": "Charlie",
     "breed": "Sphynx",
     "age": 2,
     "temperament": "Mischievous",
-    "ownerEmail": "colleen@example.com"
+    "ownerEmail": "colleen@example.com",
+    "image": "charlie.png" 
   },
   {
     "name": "Garfield",
     "breed": "British Shorthair",
     "age": 6,
     "temperament": "Lazy",
-    "ownerEmail": "andrew@example.com"
+    "ownerEmail": "andrew@example.com",
+    "image": "garfield.png" 
   },
   {
     "name": "Lily",
     "breed": "Bengal",
     "age": 4,
     "temperament": "Adventurous",
-    "ownerEmail": "lucy@example.com"
+    "ownerEmail": "lucy@example.com",
+    "image": "lily.png" 
   },
   {
     "name": "Killer",
     "breed": "Norwegian Forest",
     "age": 7,
     "temperament": "Independent",
-    "ownerEmail": "nessa@example.com"
+    "ownerEmail": "nessa@example.com",
+    "image": "killer.png" 
   },
   {
     "name": "Bronson",
     "breed": "Maine Coon",
     "age": 4,
     "temperament": "Gentle",
-    "ownerEmail": "oasis@example.com"
+    "ownerEmail": "oasis@example.com",
+    "image": "bronson.png" 
   },
   {
     "name": "Mavis",
     "breed": "Persian",
     "age": 5,
     "temperament": "Affectionate",
-    "ownerEmail": "harry@example.com"
+    "ownerEmail": "harry@example.com",
+    "image": "mavis.png" 
   },
   {
     "name": "Winston",
     "breed": "Siamese",
     "age": 3,
     "temperament": "Intelligent",
-    "ownerEmail": "kylie@example.com"
+    "ownerEmail": "kylie@example.com",
+    "image": "winston.png" 
   }
 ]

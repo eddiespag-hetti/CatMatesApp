@@ -75,6 +75,7 @@ type User {
       breed: String!
       temperament: String!
       owner: [User!]
+      jobs: [Job]
 
       # reviews: [Review!]!
     
