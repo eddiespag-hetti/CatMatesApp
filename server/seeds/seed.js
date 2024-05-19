@@ -29,7 +29,7 @@ db.once('open', async () => {
   // Create cats with correct owners
   const cats = catData.map(cat => ({
       ...cat,
-      owner: userEmailToIdMap[cat.ownerEmail], // Assign the correct owner based on email
+      owner: users[Math.floor(Math.random()*users.length)]._id 
   }));
   await Cat.create(cats);
 

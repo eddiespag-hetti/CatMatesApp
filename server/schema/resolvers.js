@@ -7,30 +7,39 @@ const bcrypt = require("bcrypt");
 const resolvers = {
 
   Query: {
-  //   getUserById: async (_, { userId }) => {
-  //     try {
-  //       return await User.findById(userId);
-  //     } catch (err) {
-  //       throw new AuthenticationError('Failed to fetch user');
-  //     }
-  //   },
-  //   getCatsByOwnerId: async (_, { ownerId }) => {
-  //     try {
-  //       return await Cat.find({ ownerId });
-  //     } catch (err) {
-  //       throw new AuthenticationError('Failed to fetch cats');
-  //     }
-  //   },
-  //   getJobById: async (_, { jobId }) => {
-  //     try {
-  //       return await Job.findById(jobId);
-  //     } catch (err) {
-  //       throw new AuthenticationError('Failed to fetch job');
-  //     }
-  //   },
-  // },
+    getUserById: async (_, { userId }) => {
+      try {
+        return await User.findById(userId);
+      } catch (err) {
+        throw new AuthenticationError('Failed to fetch user');
+      }
+    },
+    getCatsByOwnerId: async (_, { ownerId }) => {
+      try {
+        return await Cat.find({ ownerId });
+      } catch (err) {
+        throw new AuthenticationError('Failed to fetch cats');
+      }
+    },
+    getJobById: async (_, { jobId }) => {
+      try {
+        return await Job.findById(jobId);
+      } catch (err) {
+        throw new AuthenticationError('Failed to fetch job');
+      }
+    },
+    getCats: async (parent,  args, context ) => {
+      if (context) {
+        let cats = await Cat.find().populate('owner');
+       
+        console.log(cats)
+        return cats
+      } throw new AuthenticationError('Failed to fetch cats');
 
+    }
   },
+
+
 
   Mutation: {
     login: async (parent, { email, password }) => {
@@ -85,8 +94,11 @@ const resolvers = {
       }
     },
 
-    },
-  }
+    }
+    }
+
+    
+  
 
   
   module.exports = resolvers;

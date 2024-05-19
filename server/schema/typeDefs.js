@@ -74,7 +74,7 @@ type User {
       age: Int!
       breed: String!
       temperament: String!
-      ownerId: User!
+      owner: [User!]
 
       # reviews: [Review!]!
     
@@ -104,6 +104,11 @@ type Auth {
       user(id: ID!): User
         cat(id: ID!): Cat
         jobs: [Job]
+        getCats: [Cat]
+        
+        getUserById(userId: ID!): User
+    getCatsByOwnerId(ownerId: ID!): [Cat]
+    getJobById(jobId: ID!): Job
     }
     
 

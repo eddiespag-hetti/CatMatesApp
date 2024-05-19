@@ -7,6 +7,7 @@ import JobItem from '../components/Jobs/jobItem.jsx'; // Import the JobItem comp
 import CatCard from '../components/CatCard/CatCard.jsx';
 import Auth from '../utils/auth';
 import '../index.css'; // Import the provided CSS file
+import { QUERY_CATS } from '../utils/queries.js';
 
 const ProfilePage = () => {
   const idToken = Auth.getProfile();
@@ -16,6 +17,10 @@ const ProfilePage = () => {
     title: '',
     description: '',
   });
+
+const {loading, data} = useQuery(QUERY_CATS);
+const cats = data?.getCats ||  [];
+console.log(cats);
 
   const [postJob] = useMutation(POST_JOB); // Define the mutation function
 
@@ -48,16 +53,18 @@ const ProfilePage = () => {
     }
   };
 
+// const [getCat] = useMut(GET_CAT);
 
-  //  // Use the useQuery hook to fetch the user's cat information
-  //  const { loading, error, data } = useQuery(GET_CAT, {
-  //   variables: { cat: 'catName' }, // Pass the cat's name as a variable
-  // });
+// const catId = idToken.data.user.id;
+// console.log(catId);
+// const { loading, data } = getCatById({
+//   variables: { catId }
+//   });
+//   console.log(data);
+//   const cat = data?.getCatById;
+//     console.log(cat);
+ 
 
-  // if (loading) return <p>Loading...</p>;
-  // if (error) return <p>Error: {error.message}</p>;
-
-  // const { getCat: cat } = data; // Extract the cat object from the query resu
 
 
 
@@ -67,11 +74,18 @@ const ProfilePage = () => {
         <h2>Welcome back {idToken.data.username}!</h2>
         {/* <p>Email: {idToken.data.email}</p> */}
       </div>
+{console.log(Auth.getProfile())}
       <div className="user-cat">
-      <CatCard 
+        {!loading?cats.map(cat => cat.owner.filter(owner => owner.username === Auth.getProfile().data.username).map(user => <CatCard cat={cat} />)):""}
+
+</div>
+        
+            
+ 
+     
+  
          
-      />
-      </div>
+   
 
    <div className='jobs-container'>
   <div className="job-form">

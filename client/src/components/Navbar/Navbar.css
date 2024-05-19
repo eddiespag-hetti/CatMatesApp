@@ -1,5 +1,244 @@
 
 .cat-logo {
+  height: 100px;
+}
+
+.title {
+  display: flex;
+  color: #464545;
+  align-items: flex-start; 
+  gap: 0.5rem;
+  justify-content: flex-start;
+  font-size: 2.5rem;
+  font-weight: 500;
+  padding-left: 20px; 
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+}
+
+.sub-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-left: 1rem;
+  justify-content: center;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+.nav-wrapper {
+  background-color: rgba(112, 51, 235, 0.514);
+  padding: 0.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  backdrop-filter: blur(50px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.nav-content ul {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-content li {
+  margin: 0 1.5rem;
+}
+
+#menu-item {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #555454;
+  position: relative;
+  cursor: pointer;
+}
+
+#menu-item::before {
+  content: " ";
+  width: 2rem;
+  height: 0.2rem;
+  background: linear-gradient(90deg, #8f59db75 0%, #ad3bea 100%);
+  border-radius: -0.6rem;
+  position: absolute;
+  bottom: -0.6rem;
+  opacity: 0;
+  transform: translateX(-1.5rem);
+  transition: all 0.3s ease;
+}
+
+#menu-item:hover::before {
+  width: 100%;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.create-acc-btn,
+.login-btn,
+.logout-btn {
+  background: linear-gradient(90deg, #5c23abd0 0%, #9f20e3 100%);
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+}
+
+.create-acc-btn:hover,
+.login-btn:hover,
+.logout-btn:hover {
+  background-color: #6e3ad8;
+  transform: translateY(-2px);
+}
+
+.create-acc-btn:active,
+.login-btn:active,
+.logout-btn:active {
+  transform: translateY(1px);
+}
+
+/* Media Queries for Responsiveness */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+  .nav-content {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .title {
+      font-size: 2rem;
+      padding-left: 0;
+  }
+
+  .sub-title {
+      font-size: 0.875rem;
+      padding-left: 0;
+      text-align: center;
+  }
+
+  .nav-content ul {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+  }
+
+  .nav-content li {
+      margin: 0;
+  }
+
+  .create-acc-btn,
+  .login-btn,
+  .logout-btn {
+      width: 100%;
+      text-align: center;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+  .nav-content {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .title {
+      font-size: 2.25rem;
+      padding-left: 0;
+  }
+
+  .sub-title {
+      font-size: 0.875rem;
+      padding-left: 0;
+      text-align: center;
+  }
+
+  .nav-content ul {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+  }
+
+  .nav-content li {
+      margin: 0;
+  }
+
+  .create-acc-btn,
+  .login-btn,
+  .logout-btn {
+      width: 100%;
+      text-align: center;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .nav-wrapper {
+      flex-direction: row;
+      align-items: center;
+  }
+
+  .nav-content {
+      flex-direction: row;
+      justify-content: space-between;
+  }
+
+  .title {
+      font-size: 2.5rem;
+  }
+
+  .sub-title {
+      font-size: 1rem;
+      padding-left: 1rem;
+      text-align: left;
+  }
+
+  .nav-content ul {
+      flex-direction: row;
+      align-items: center;
+      gap: 0.5rem;
+  }
+
+  .nav-content li {
+      margin: 0 1rem;
+  }
+
+  .create-acc-btn,
+  .login-btn,
+  .logout-btn {
+      width: auto;
+      text-align: left;
+  }
+}
+
+
+
+
+
+/* 
+
+
+
+
+
+ .cat-logo {
     height: 100px;
     
 }
@@ -14,9 +253,9 @@
     font-weight: 500;
     padding-left: 20px; 
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
-}
+} 
 
-.sub-title {
+ .sub-title {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -37,7 +276,7 @@
 }
 
 .nav-content {
-    /* max-width: 2000px; */
+    
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -56,9 +295,9 @@
 .nav-content li {
     margin: 0 1.5rem;
 
-}
+} 
 
-#menu-item {
+ #menu-item {
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: 500;
@@ -98,18 +337,18 @@
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
     text-decoration: none;
-    /* Add transitions for smooth color change and hover effect */
+  
   }
   
   .create-acc-btn:hover {
     background-color: #6e3ad8;
     transform: translateY(-2px);
-    /* Add a slight lift effect on hover */
+
   }
   
   .create-acc-btn:active {
     transform: translateY(1px);
-    /* Add a slight press effect on click */
+   
   }
   
 
@@ -128,11 +367,11 @@
   .login-btn:hover {
     background-color: #6e3ad8;
     transform: translateY(-2px);
-    /* Add a slight lift effect on hover */
+ 
   }
   .login-btn:active {
     transform: translateY(1px);
-    /* Add a slight press effect on click */
+   
   }
 
 
@@ -152,9 +391,83 @@
   .logout-btn:hover {
     background-color: #6e3ad8;
     transform: translateY(-2px);
-    /* Add a slight lift effect on hover */
+
   }
   .logout-btn:active {
     transform: translateY(1px);
-    /* Add a slight press effect on click */
+  
+  } 
+
+  /* Media Queries for Responsiveness */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+  .nav-content {
+      flex-direction: column;
+      align-items: center;
   }
+
+  .title {
+      font-size: 2rem;
+      padding-left: 0;
+  }
+
+  .sub-title {
+      font-size: 0.875rem;
+      padding-left: 0;
+      justify-content: center;
+  }
+
+  .nav-content ul {
+      flex-direction: column;
+      gap: 1rem;
+  }
+
+  .nav-content li {
+      margin: 0;
+  }
+
+  .create-acc-btn,
+  .login-btn,
+  .logout-btn {
+      width: 100%;
+      text-align: center;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+  .title {
+      font-size: 2.25rem;
+  }
+
+  .nav-content ul {
+      flex-direction: column;
+      gap: 1rem;
+  }
+
+  .nav-content li {
+      margin: 0;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (max-width: 992px) {
+  .nav-content {
+      flex-direction: row;
+      justify-content: space-between;
+  }
+
+  .title {
+      font-size: 2.5rem;
+  }
+
+  .nav-content ul {
+      flex-direction: row;
+      gap: 0.5rem;
+  }
+
+  .nav-content li {
+      margin: 0 1rem;
+  }
+} */
