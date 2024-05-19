@@ -20,7 +20,7 @@ Welcome to CatMates! This web application connects cat owners with cat sitters, 
 
 ## Deployed site 
 
-- (paste deployed link here)
+ - https://safe-ridge-98664-519219d5b6e6.herokuapp.com/
 
 ## Installation
 

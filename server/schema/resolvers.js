@@ -70,21 +70,25 @@ const resolvers = {
     },
 
     addJob: async (parent, { title, description }, context) => {
-      if (context.user) {
+      if (!context.user) {
+        throw new AuthenticationError("You need to be logged in!");
+      }
+      try {
         const job = await Job.create({
           title,
           description,
         });
-
         await User.findOneAndUpdate(
           { _id: context.user._id },
           { $addToSet: { jobs: job._id } }
         );
-
+        // You might want to also add the job to the appropriate cat if there's a relationship
         return job;
+      } catch (error) {
+        throw new Error("Failed to add job");
       }
-      throw AuthenticationError("You need to be logged in!");
     },
+    
     addCat: async (_, args) => {
       try {
         const newCat = await Cat.create(args);
